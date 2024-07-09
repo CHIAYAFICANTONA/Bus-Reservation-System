@@ -1,0 +1,5 @@
+node_modules
+Bus_Booking_System-MobileEnd/node_modules
+Bus_Booking_System-MobileEnd/.gitignore
+Bus_Booking_System-MobileEnd/dist/
+Bus_Booking_System-MobileEnd/build/
