@@ -1,4 +1,5 @@
-.container{
+.container_cantona{
 display: flex;
 justify-content: space-around;
+background-color: blue;
 }
