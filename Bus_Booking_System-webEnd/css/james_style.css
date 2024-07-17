@@ -1,0 +1,28 @@
+
+footer {
+  background-color: blue;
+  color: #fff;
+  padding: 20px;
+  text-align: center; /* Aligns text and inline elements center horizontally */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block; /* Display list items horizontally */
+  margin-right: 10px; /* Adjust spacing between items */
+}
+
+.social-icons {
+  margin-top: 10px; /* Adjust spacing from navigation */
+}
+
+.social-icons a {
+  display: inline-block; /* Display social icons horizontally */
+  margin-right: 10px; /* Adjust spacing between icons */
+
+}
+

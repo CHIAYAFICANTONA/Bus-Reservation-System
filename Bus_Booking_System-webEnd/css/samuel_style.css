@@ -1,0 +1,39 @@
+.header_samuel {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar_samuel {
+  flex-grow: 1;
+}
+
+.navlist_samuel {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navlist_samuel li {
+  margin-right: 10px;
+}
+
+.navlist_samuel li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+
+.navlist_samuel li a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+.logo_samuel {
+  font-size: 24px;
+  font-weight: bold;
+}
