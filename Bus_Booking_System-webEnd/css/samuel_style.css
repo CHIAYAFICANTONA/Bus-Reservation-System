@@ -1,39 +1,141 @@
+/* Header section */
 .header_samuel {
-  background-color: #f2f2f2;
-  padding: 10px;
+  background-color: lightblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.logo_samuel {
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .navbar_samuel {
-  flex-grow: 1;
-}
-
-.navlist_samuel {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-start;
 }
 
-.navlist_samuel li {
+.navbar_samuel li {
   margin-right: 10px;
 }
 
-.navlist_samuel li a {
-  text-decoration: none;
-  color: #333;
+.profile_samuel {
+  display: flex;
+  align-items: center;
+}
+
+.profile_samuel img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Hero section */
+.hero_samuel {
+  background-image: url("path_to_your_image.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #f2f2f2;
+}
+
+.hero_samuel h1 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.hero_samuel h2 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.search_form_samuel {
+  margin-bottom: 20px;
+}
+
+.search_form_samuel input {
+  margin-right: 10px;
   padding: 5px;
 }
 
-.navlist_samuel li a:hover {
-  color: #000;
-  background-color: #ccc;
+.search_form_samuel button {
+  padding: 5px 10px;
+  background-color: darkblue;
+  color: white;
+  border: none;
 }
 
-.logo_samuel {
+.accommodation_checkbox_samuel {
+  color: white;
+}
+
+/* Offers section */
+.offers_samuel {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #d0d0d0;
+}
+
+.offers_samuel h2 {
   font-size: 24px;
-  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.view_all_button_samuel {
+  padding: 5px 10px;
+  background-color: darkblue;
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.offers_samuel img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Process section */
+.process_samuel {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.process_samuel h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.process_step_samuel {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #f2f2f2;
+}
+
+.process_step_samuel img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.process_step_samuel h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.process_step_samuel p {
+  font-size: 14px;
+  color: #666666;
 }
