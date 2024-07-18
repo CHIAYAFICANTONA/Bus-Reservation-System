@@ -1,29 +1,67 @@
-.body {
+body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    display: flex;
-    align-items: center;
+header {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+main {
     padding: 20px;
 }
 
-.left-text {
-    max-width: 60%;
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.left-text h1 {
-    margin-top: 0;
+.text {
+    flex: 1;
+    padding: 20px;
 }
 
-.left-text p {
-    line-height: 1.6;
+.image {
+    flex: 1;
+    padding: 20px;
 }
 
-.right-image {
-    max-width: 40px;
+.image img {
+    max-width: 100%;
     height: auto;
-    margin-left: 20px;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+form input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
 }
