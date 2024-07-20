@@ -25,6 +25,26 @@
   margin-right: 10px;
 }
 
+.login-link_samuel {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid gray;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.signup-link_samuel {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid gray;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
 .profile_samuel {
   display: flex;
   align-items: center;
