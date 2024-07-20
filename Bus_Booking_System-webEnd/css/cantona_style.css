@@ -1,11 +1,11 @@
-body {
+.body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-header {
+.header{
     text-align: center;
     padding: 20px;
     background-color: red;
@@ -41,23 +41,23 @@ header {
     height: auto;
 }
 
-form {
+.form {
     text-align: center;
     margin-top: 20px;
 }
 
-form label {
+.form label {
     font-size: 1.2em;
     margin-right: 10px;
 }
 
-form input[type="email"] {
+.form input[type="email"] {
     padding: 10px;
     font-size: 1em;
     margin-right: 10px;
 }
 
-form button {
+.form button {
     padding: 10px 20px;
     font-size: 1em;
     background-color: red;
@@ -66,7 +66,7 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+.form button:hover {
     background-color: blue;
 }
 
@@ -75,4 +75,4 @@ form button:hover {
     margin-top: 20px;
     font-size: 1.2em;
     color: #ff0000;
-}
+    }
