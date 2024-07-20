@@ -5,10 +5,10 @@ body {
     padding: 0;
 }
 
-.header_cantona{
+header{
     text-align: center;
     padding: 20px;
-    background-color: red;
+    background-color: #ADD8E6;
 }
 
 .horizontal-layout_cantona {
@@ -41,38 +41,41 @@ body {
     height: auto;
 }
 
-.form_cantona {
-    text-align: center;
-    margin-top: 20px;
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.form label_cantona {
-    font-size: 1.2em;
-    margin-right: 10px;
+.email-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form input[type="email"] {
+.email-form input[type="email"] {
     padding: 10px;
-    font-size: 1em;
-    margin-right: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.form button_cantona {
+.email-form button {
     padding: 10px 20px;
-    font-size: 1em;
-    background-color: red;
-    color: white;
     border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.form button:hover {
-    background-color: blue;
+.email-form button:hover {
+    background-color: #0056b3;
 }
-
 .advertisement_cantona {
     text-align: center;
     margin-top: 20px;
     font-size: 1.2em;
-    color: #ff0000;
+    color: #007BFF;
     }
