@@ -1,24 +1,24 @@
-.body {
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-.header{
+.header_cantona{
     text-align: center;
     padding: 20px;
     background-color: red;
 }
 
-.horizontal-layout {
+.horizontal-layout_cantona {
     display: flex ;
     overflow-x: auto;
     padding: 20px;
     gap: 20px;
 }
 
-.feature {
+.feature_cantona {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
     flex: 0 0 auto;
 }
 
-.text {
+.text_cantona {
     text-align: center;
     max-width: 200px;
 }
@@ -41,12 +41,12 @@
     height: auto;
 }
 
-.form {
+.form_cantona {
     text-align: center;
     margin-top: 20px;
 }
 
-.form label {
+.form label_cantona {
     font-size: 1.2em;
     margin-right: 10px;
 }
@@ -57,7 +57,7 @@
     margin-right: 10px;
 }
 
-.form button {
+.form button_cantona {
     padding: 10px 20px;
     font-size: 1em;
     background-color: red;
@@ -70,7 +70,7 @@
     background-color: blue;
 }
 
-.advertisement {
+.advertisement_cantona {
     text-align: center;
     margin-top: 20px;
     font-size: 1.2em;
