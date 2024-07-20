@@ -19,6 +19,7 @@ body {
   min-width: 200px;
   border-bottom: 2px solid #444;
   padding-bottom: 5px;
+  text-align: center;
 }
 .payment{
   margin: 10px 20px;
@@ -32,6 +33,24 @@ body {
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+}
+.button {
+  background-color: #4c5caf; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline-block */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition effect */
+}
+/* Hover effect */
+.button:hover {
+  background-color: #ac1717; /* Darker green on hover */
 }
 
 .footer-column {
