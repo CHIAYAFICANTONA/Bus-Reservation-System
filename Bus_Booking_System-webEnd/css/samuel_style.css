@@ -39,8 +39,8 @@
 
 /* Hero section */
 .hero_samuel {
-  background-image: url("path_to_your_image.jpg");
-  background-size: cover;
+  background-image: url("../img/samuel_img/background.png");
+  background-size: 1200px 500px;
   background-position: center;
   padding: 20px;
   text-align: center;
@@ -108,7 +108,7 @@
 
 /* Process section */
 .process_samuel {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 20px;
   border: 1px solid #e0e0e0;
 }
@@ -125,8 +125,8 @@
 }
 
 .process_step_samuel img {
-  width: 100px;
-  height: 100px;
+  width: 400px;
+  height: 300px;
   margin-bottom: 10px;
 }
 
