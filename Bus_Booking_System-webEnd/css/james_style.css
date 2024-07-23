@@ -7,8 +7,8 @@ body {
 }
 
 .footer {
-  background-color: #333;
-  color: white;
+  background-color: #ADD8E6;
+  color: rgb(16, 63, 179);
   padding: 10px 0;
   width: 100%;
 
@@ -37,7 +37,7 @@ body {
 .button {
   background-color: #4c5caf; /* Green background */
   border: none; /* Remove borders */
-  color: white; /* White text */
+  color: #ffffff; /* White text */
   padding: 15px 32px; /* Some padding */
   text-align: center; /* Centered text */
   text-decoration: none; /* Remove underline */
@@ -74,12 +74,12 @@ body {
 }
 
 .footer-column ul li a {
-  color: white;
+  color: #103fb3;
   text-decoration: none;
 }
 
 .footer-column ul li a:hover {
-  color: #ddd;
+  color: #103fb3;
 }
 
 .footer-column .social-icons {
