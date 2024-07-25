@@ -11,10 +11,12 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background: #081b29;
+  background: url("../../img/marcus img/wall p.jpg") no-repeat;
+  background-size: cover;
 }
 
 .wrapper {
+  margin-top: 85px;
   position: relative;
   width: 750px;
   height: 450px;
