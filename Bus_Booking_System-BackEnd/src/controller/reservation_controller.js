@@ -21,7 +21,7 @@ exports.getReservation = async(req, res) => {
 
 exports.saveReservation = async(req, res) => {
     try {
-        let = { 
+        let {
             userId,
             busId,
             seatId,
@@ -49,21 +49,21 @@ exports.saveReservation = async(req, res) => {
             })
         }else if(control_userId[0].length===0 &&
                  control_busId[0].length===0 &&
-                 control_seatId[0].length!=0){
+                 control_seatId[0].length!==0){
                     res.status(404).send({
                         success: false,
                         data: [],
                         message: 'User ID and Bus ID not found'
              })
         }else if(control_userId[0].length===0 &&
-                 control_busId[0].length!=0 &&
+                 control_busId[0].length!==0 &&
                  control_seatId[0].length===0){
                res.status(404).send({
                    success: false,
                    data: [],
                    message: 'User ID and Seat ID not found'
              })
-        }else if(control_userId[0].length!=0 &&
+        }else if(control_userId[0].length!==0 &&
                  control_busId[0].length===0 &&
                  control_seatId[0].length===0){
                res.status(404).send({
@@ -72,34 +72,34 @@ exports.saveReservation = async(req, res) => {
                    message: 'Bus ID and Seat ID not found'
              })
         }else if(control_userId[0].length===0 &&
-                 control_busId[0].length!=0 &&
-                 control_seatId[0].length!=0){
+                 control_busId[0].length!==0 &&
+                 control_seatId[0].length!==0){
                res.status(404).send({
                    success: false,
                    data: [],
                    message: 'User ID not found'
              })
-        }else if(control_userId[0].length!=0 &&
-                 control_busId[0].length!=0 &&
+        }else if(control_userId[0].length!==0 &&
+                 control_busId[0].length!==0 &&
                  control_seatId[0].length===0){
                res.status(404).send({
                    success: false,
                    data: [],
                    message: 'Seat ID not found'
              })
-        }else if(control_userId[0].length!=0 &&
+        }else if(control_userId[0].length!==0 &&
                  control_busId[0].length===0 &&
-                 control_seatId[0].length!=0){
+                 control_seatId[0].length!==0){
              res.status(404).send({
                  success: false,
                  data: [],
                  message: 'Bus ID not found'
         })
-        }else if(control_userId[0].length!=0 &&
-                 control_busId[0].length!=0 &&
-                 control_seatId[0].length!=0){
+        }else if(control_userId[0].length!==0 &&
+                 control_busId[0].length!==0 &&
+                 control_seatId[0].length!==0){
             const payment = await dbconnection.query(
-                "INSERT INTO reservation(userId, busId, seatId, reservationDate) VALUES(?, ?, ?, ?)",
+                'INSERT INTO reservation(userId, busId, seatId, reservationDate) VALUES(?, ?, ?, ?)',
                 [userId, busId, seatId, reservationDate]);
             res.status(201).send({
                 success: true,
@@ -118,7 +118,7 @@ exports.saveReservation = async(req, res) => {
 
 exports.updateReservation = async(req, res) => {
     try {
-        let = { 
+        let {
             userId,
             busId,
             seatId,
