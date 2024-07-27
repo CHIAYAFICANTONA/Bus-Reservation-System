@@ -25,7 +25,7 @@ exports.saveAdmin = async(req, res) => {
             password
         } = req.body;
         const admin = await dbconnection.query(
-            "INSERT INTO admin(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)",
+            'INSERT INTO admin(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)',
             [name, email, phoneNumber, password]);
         res.status(201).send({
             success: true,
@@ -50,11 +50,11 @@ exports.updateAdmin = async(req, res) => {
         } = req.body;
         let id = req.query.id;
         const admin = await dbconnection.query(
-            "UPDATE admin SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?",
+            'UPDATE admin SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?',
              [name, email, phoneNumber, password, id]
             );
         const updateAdmin = await dbconnection.query(
-            "SELECT * FROM admin WHERE id = ?",
+            'SELECT * FROM admin WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -75,7 +75,7 @@ exports.deleteAdmin = async(req, res) => {
     try {
         let id = req.params.id;
         const admin = await dbconnection.query(
-            "DELETE FROM admin WHERE id= ?",
+            'DELETE FROM admin WHERE id= ?',
              [id]
             );
         res.status(200).send({

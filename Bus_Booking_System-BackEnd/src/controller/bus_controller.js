@@ -24,7 +24,7 @@ exports.saveBus = async(req, res) => {
             driverName
         } = req.body;
         const bus = await dbconnection.query(
-            "INSERT INTO bus(licensePlate, driverName) VALUES(?, ?)",
+            'INSERT INTO bus(licensePlate, driverName) VALUES(?, ?)',
             [licensePlate, driverName]);
         res.status(201).send({
             success: true,
@@ -48,11 +48,11 @@ exports.updateBus = async(req, res) => {
         } = req.body;
         let id = req.query.id;
         const bus = await dbconnection.query(
-            "UPDATE bus SET licencePlate = ?, driverName = ? WHERE id= ?",
+            'UPDATE bus SET licencePlate = ?, driverName = ? WHERE id= ?',
              [licensePlate, driverName, id]
             );
         const updateBus = await dbconnection.query(
-            "SELECT * FROM bus WHERE id = ?",
+            'SELECT * FROM bus WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -73,7 +73,7 @@ exports.deleteBus = async(req, res) => {
     try {
         let id = req.params.id;
         const bus = await dbconnection.query(
-            "DELETE FROM bus WHERE id= ?",
+            'DELETE FROM bus WHERE id= ?',
              [id]
             );
         res.status(200).send({

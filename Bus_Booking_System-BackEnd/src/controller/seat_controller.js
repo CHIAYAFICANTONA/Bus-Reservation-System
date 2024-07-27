@@ -21,7 +21,7 @@ exports.getSeat = async(req, res) => {
 
 exports.saveSeat = async(req, res) => {
     try {
-        let = { 
+        let {
             busId,
             isAvailable
         } = req.body;
@@ -37,7 +37,7 @@ exports.saveSeat = async(req, res) => {
             })
         }else{
             const seat = await dbconnection.query(
-                "INSERT INTO seat(busId, isAvailable) VALUES(?, ?)",
+                'INSERT INTO seat(busId, isAvailable) VALUES(?, ?)',
                 [busId, isAvailable]);
             res.status(201).send({
                 success: true,
@@ -56,17 +56,17 @@ exports.saveSeat = async(req, res) => {
 
 exports.updateSeat = async(req, res) => {
     try {
-        let = { 
+        let {
             busId,
             isAvailable
         } = req.body;
         let id = req.query.id;
         const seat = await dbconnection.query(
-            "UPDATE seat SET busId = ?, isAvailable = ? WHERE id= ?",
+            'UPDATE seat SET busId = ?, isAvailable = ? WHERE id= ?',
              [busId, isAvailable, id]
             );
         const updateSeat = await dbconnection.query(
-            "SELECT * FROM seat WHERE id = ?",
+            'SELECT * FROM seat WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -87,7 +87,7 @@ exports.deleteSeat = async(req, res) => {
     try {
         let id = req.params.id;
         const seat = await dbconnection.query(
-            "DELETE FROM seat WHERE id= ?",
+            'DELETE FROM seat WHERE id= ?',
              [id]
             );
         res.status(200).send({

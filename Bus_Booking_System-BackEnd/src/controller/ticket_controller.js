@@ -21,7 +21,7 @@ exports.getTicket = async(req, res) => {
 
 exports.saveTicket = async(req, res) => {
     try {
-        let = { 
+        let {
             reservationId,
             issueDate,
             price
@@ -38,7 +38,7 @@ exports.saveTicket = async(req, res) => {
             })
         }else{
             const ticket = await dbconnection.query(
-                "INSERT INTO ticket(reservationId, issueDate, price) VALUES(?, ?, ?)",
+                'INSERT INTO ticket(reservationId, issueDate, price) VALUES(?, ?, ?)',
                 [reservationId, issueDate, price]);
             res.status(201).send({
                 success: true,
@@ -57,18 +57,18 @@ exports.saveTicket = async(req, res) => {
 
 exports.updateTicket = async(req, res) => {
     try {
-        let = { 
+        let {
             reservationId,
             issueDate,
             price
         } = req.body;
         let id = req.query.id;
         const ticket = await dbconnection.query(
-            "UPDATE ticket SET reservationId = ?, issueDate = ?, price = ? WHERE id= ?",
+            'UPDATE ticket SET reservationId = ?, issueDate = ?, price = ? WHERE id= ?',
              [reservationId, issueDate, price, id]
             );
         const updateTicket = await dbconnection.query(
-            "SELECT * FROM ticket WHERE id = ?",
+            'SELECT * FROM ticket WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -89,7 +89,7 @@ exports.deleteTicket = async(req, res) => {
     try {
         let id = req.params.id;
         const ticket = await dbconnection.query(
-            "DELETE FROM ticket WHERE id= ?",
+            'DELETE FROM ticket WHERE id= ?',
              [id]
             );
         res.status(200).send({

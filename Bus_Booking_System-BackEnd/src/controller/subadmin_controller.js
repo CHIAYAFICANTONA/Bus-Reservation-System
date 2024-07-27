@@ -2,10 +2,10 @@ const dbconnection = require('../database');
 
 exports.getSubadmin = async(req, res) => {
     try {
-        const subadmins = await dbconnection.query('SELECT * FROM subadmin');
+        const subadmin = await dbconnection.query('SELECT * FROM subadmin');
         res.status(200).send({
             success: true,
-            data: subadmins[0],
+            data: subadmin[0],
             message: 'Success'
         })
     } catch (error) {
@@ -25,7 +25,7 @@ exports.saveSubadmin = async(req, res) => {
             password
         } = req.body;
         const subadmin = await dbconnection.query(
-            "INSERT INTO subadmin(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)",
+            'INSERT INTO subadmin(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)',
             [name, email, phoneNumber, password]);
         res.status(201).send({
             success: true,
@@ -50,11 +50,11 @@ exports.updateSubadmin = async(req, res) => {
         } = req.body;
         let id = req.query.id;
         const subadmin = await dbconnection.query(
-            "UPDATE subadmin SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?",
+            'UPDATE subadmin SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?',
              [name, email, phoneNumber, password, id]
             );
         const updateSubadmin = await dbconnection.query(
-            "SELECT * FROM subadmin WHERE id = ?",
+            'SELECT * FROM subadmin WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -75,7 +75,7 @@ exports.deleteSubadmin = async(req, res) => {
     try {
         let id = req.params.id;
         const subadmin = await dbconnection.query(
-            "DELETE FROM subadmin WHERE id= ?",
+            'DELETE FROM subadmin WHERE id= ?',
              [id]
             );
         res.status(200).send({

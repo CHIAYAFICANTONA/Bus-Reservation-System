@@ -21,7 +21,7 @@ exports.getPayment = async(req, res) => {
 
 exports.savePayment = async(req, res) => {
     try {
-        let = { 
+        let {
             reservationId,
             amount,
             paymentMethod,
@@ -46,7 +46,7 @@ exports.savePayment = async(req, res) => {
                 data: payment,
                 message: 'Successfully Saved Payment'
             });
-        };
+        }
     } catch (error) {
         res.status(500).send({
             success: false,
@@ -58,7 +58,7 @@ exports.savePayment = async(req, res) => {
 
 exports.updatePayment = async(req, res) => {
     try {
-        let = { 
+        let {
             reservationId,
             amount,
             paymentMethod,
@@ -66,11 +66,11 @@ exports.updatePayment = async(req, res) => {
         } = req.body;
         let id = req.query.id;
         const payment = await dbconnection.query(
-            "UPDATE payment SET reservationId = ?, amount = ?, paymentMethod = ?, isSuccessful = ? WHERE id= ?",
+            'UPDATE payment SET reservationId = ?, amount = ?, paymentMethod = ?, isSuccessful = ? WHERE id= ?',
              [reservationId, amount, paymentMethod, isSuccessful, id]
             );
         const updatePayment = await dbconnection.query(
-            "SELECT * FROM payment WHERE id = ?",
+            'SELECT * FROM payment WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -91,7 +91,7 @@ exports.deletePayment = async(req, res) => {
     try {
         let id = req.params.id;
         const payment = await dbconnection.query(
-            "DELETE FROM payment WHERE id= ?",
+            'DELETE FROM payment WHERE id= ?',
              [id]
             );
         res.status(200).send({

@@ -21,7 +21,7 @@ exports.getRoom = async(req, res) => {
 
 exports.saveRoom = async(req, res) => {
     try {
-        let = { 
+        let {
             hotelId,
             roomNumber,
             isAvailable
@@ -38,8 +38,8 @@ exports.saveRoom = async(req, res) => {
             })
         }else{
             const room = await dbconnection.query(
-                "INSERT INTO room(hotelId, roomNumber, isAvailable) VALUES(?, ?, ?)",
-                [hotelId, roomNumber, isAvailabl]);
+                'INSERT INTO room(hotelId, roomNumber, isAvailable) VALUES(?, ?, ?)',
+                [hotelId, roomNumber, isAvailable]);
             res.status(201).send({
                 success: true,
                 data: room,
@@ -57,18 +57,18 @@ exports.saveRoom = async(req, res) => {
 
 exports.updateRoom = async(req, res) => {
     try {
-        let = { 
+        let {
             hotelId,
             roomNumber,
             isAvailable
         } = req.body;
         let id = req.query.id;
         const room = await dbconnection.query(
-            "UPDATE room SET hotelId = ?, roomNumber = ?, isAvailable = ? WHERE id= ?",
+            'UPDATE room SET hotelId = ?, roomNumber = ?, isAvailable = ? WHERE id= ?',
              [hotelId, roomNumber, isAvailable, id]
             );
         const updateRoom = await dbconnection.query(
-            "SELECT * FROM room WHERE id = ?",
+            'SELECT * FROM room WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -89,7 +89,7 @@ exports.deleteRoom = async(req, res) => {
     try {
         let id = req.params.id;
         const room = await dbconnection.query(
-            "DELETE FROM room WHERE id= ?",
+            'DELETE FROM room WHERE id= ?',
              [id]
             );
         res.status(200).send({

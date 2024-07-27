@@ -19,12 +19,12 @@ exports.getHotel = async(req, res) => {
 
 exports.saveHotel = async(req, res) => {
     try {
-        let = { 
+        let {
             name,
             location
         } = req.body;
         const hotel = await dbconnection.query(
-            "INSERT INTO bus(name, location) VALUES(?, ?)",
+            'INSERT INTO bus(name, location) VALUES(?, ?)',
             [name, location]);
         res.status(201).send({
             success: true,
@@ -42,17 +42,17 @@ exports.saveHotel = async(req, res) => {
 
 exports.updateHotel = async(req, res) => {
     try {
-        let = { 
+        let {
             name,
             location
         } = req.body;
         let id = req.query.id;
         const hotel = await dbconnection.query(
-            "UPDATE hotel SET name = ?, location = ? WHERE id= ?",
+            'UPDATE hotel SET name = ?, location = ? WHERE id= ?',
              [name, location, id]
             );
         const updateBus = await dbconnection.query(
-            "SELECT * FROM hotel WHERE id = ?",
+            'SELECT * FROM hotel WHERE id = ?',
             [id]
         );
         res.status(201).send({
@@ -73,7 +73,7 @@ exports.deleteHotel = async(req, res) => {
     try {
         let id = req.params.id;
         const hotel = await dbconnection.query(
-            "DELETE FROM hotel WHERE id= ?",
+            'DELETE FROM hotel WHERE id= ?',
              [id]
             );
         res.status(200).send({
