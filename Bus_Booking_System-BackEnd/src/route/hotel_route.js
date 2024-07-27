@@ -1,37 +1,13 @@
 const express = require('express');
 const route = express.Router();
-const h_control = require('../controller/hotel_control')
+const ho_controller = require('../controller/hotel_controller')
 
-route.get( '/', h_control.gethotels);
+route.get( '/', ho_controller.getHotel);
 
-route.post('/hotel', (req, res) => {
-    let hotel = { 
-        name,
-        location
-    } = req.body;
-    
-    res.status(201).send({ 
-        'name' :name,
-        'location' :location
-    }).status(201)
-});
+route.post('/', ho_controller.saveHotel);
 
-    route.put('/hotel', (req, res) => {
-    let hotel = { 
-        name,
-        location
-    } = req.body;
-    
-    res.status(201).send({ 
-        'update name' :name,
-        'update location' :location
-    })
-});
+route.put('/', ho_controller.updateHotel);
 
-route.delete('/hotel/:id', (req, res) => {
-    let id = req.params.id;
-    
-    res.status(200).send(`deleted successfully id ${id}`)
-});
+route.delete('/:id', ho_controller.deleteHotel);
 
 module.exports = route
