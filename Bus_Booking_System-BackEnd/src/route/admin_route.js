@@ -1,45 +1,13 @@
 const express = require('express');
 const route = express.Router();
-const a_control = require('../controller/admin_control')
+const ad_controller = require('../controller/admin_controller')
 
-route.get( '/', a_control.getadmins);
+route.get( '/', ad_controller.getAdmin);
 
-route.post('/admin', (req, res) => {
-    let admin = { 
-        name,
-        email,
-        phoneNumber,
-        password 
-    } = req.body;
-    
-    res.status(201).send({ 
-        'name' :name,
-        'email' :email,
-        'tel' : phoneNumber,
-        'password' : password
-    }).status(201)
-});
+route.post('/', ad_controller.saveAdmin);
 
-    route.put('/admin', (req, res) => {
-    let admin = { 
-        name,
-        email,
-        phoneNumber,
-        password
-    } = req.body;
-    
-    res.status(201).send({ 
-        'update name' :name,
-        'update email' :email,
-        'update tel' :phoneNumber,
-        'update password' :password
-    })
-});
+route.put('/', ad_controller.updateAdmin);
 
-route.delete('/admin/:id', (req, res) => {
-    let id = req.params.id;
-    
-    res.status(200).send(`deleted successfully id ${id}`)
-});
+route.delete('/:id', ad_controller.deleteAdmin);
 
 module.exports = route
