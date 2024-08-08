@@ -1,17 +1,27 @@
 /* Header section */
+*{
+  font-family: "century gothic";
+}
+.home_samuel{
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/samuel_img/bc2.png ");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .header_samuel {
-  background-color: lightblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   padding: 10px;
-  border: 1px solid #e0e0e0;
+  height: 70px;
 }
 
 .logo_samuel {
   font-weight: bold;
   font-size: 24px;
+  text-decoration: none;
 }
 
 .navbar_samuel {
@@ -27,21 +37,22 @@
 
 .login-link_samuel {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: dodgerblue;
-  border: 1px solid gray;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 10px;
   text-decoration: none;
-  color: black;
+  color: blue;
   margin-right: 10px;
 }
 
 .signup-link_samuel {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: dodgerblue;
+  padding: 5px 15px;
+  background-color: white;
   border: 1px solid gray;
+  border-radius: 10px;
   text-decoration: none;
-  color: black;
+  color: blue;
   margin-right: 10px;
 }
 
@@ -59,24 +70,33 @@
 
 /* Hero section */
 .hero_samuel {
-  background-image: url("../img/samuel_img/background.png");
   background-size: 1200px 500px;
   background-position: center;
-  padding: 20px;
   text-align: center;
-  border: 1px solid #f2f2f2;
+  width: 100%;
+  height: 60vh;
+  align-content: center;
 }
 
 .hero_samuel h1 {
-  font-size: 36px;
-  color: white;
-  margin-bottom: 10px;
+  font-size: 50px;
+  color: blue;
+  margin-bottom: 1px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 
-.hero_samuel h2 {
-  font-size: 18px;
+.hero_logo{
+  color: darkblue;
+}
+
+.hero_samuel p{
+  font-size: 20px;
   color: white;
   margin-bottom: 20px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
 }
 
 .search_form_samuel {
@@ -86,14 +106,18 @@
 .search_form_samuel input {
   margin-right: 10px;
   padding: 5px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 200px;
+  height: 20px;
 }
 
 .search_form_samuel button {
   padding: 5px 10px;
-  background-color: darkblue;
+  background-color: grey;
   color: white;
-  border: none;
-}
+  border: 1px solid gray;
+  border-radius: 20px;
 
 .accommodation_checkbox_samuel {
   color: white;
@@ -121,7 +145,7 @@
 
 .offers_samuel img {
   width: 200px;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -162,3 +186,5 @@
   font-size: 14px;
   color: #666666;
 }
+}
+
