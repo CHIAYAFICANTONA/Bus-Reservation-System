@@ -19,8 +19,9 @@
 }
 
 .logo_samuel img{
-  width: 85px;
+  width: 65px;
   height: 65px;
+  border-radius: 50%;
 }
 
 .navbar_samuel {
