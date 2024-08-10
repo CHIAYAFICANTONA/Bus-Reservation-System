@@ -45,6 +45,28 @@
   margin-right: 10px;
 }
 
+.login-link_samuel:hover{
+  color: white;
+  background-color: blue;
+}
+
+.login-link_samuel:active{
+  color: white;
+  background-color: blue;
+  font-weight: bolder;
+}
+
+.signup-link_samuel:hover{
+  color: white;
+  background-color: blue;
+}
+
+.signup-link_samuel:active{
+  color: white;
+  background-color: blue;
+  font-weight: bolder;
+}
+
 .signup-link_samuel {
   display: inline-block;
   padding: 5px 10px;
@@ -106,9 +128,10 @@
   margin-right: 10px;
   padding: 5px;
   border: 1px solid gray;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 200px;
   height: 20px;
+  color: blue;
 }
 
 .search_form_samuel button {
@@ -116,11 +139,14 @@
   background-color: blue;
   color: white;
   border: 1px solid gray;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .accommodation_checkbox_samuel {
-  color: white;
+  font-weight: bold;
+  color: blue;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
 }
 
 /* Offers section */
@@ -151,13 +177,13 @@
 }
 
 .view-all-link:hover {
-  border-color: wheat;
+  border-color: #F6A548;
   background-color: #F6A548;
 }
 
 .view-all-link:active {
-  color: #fff;
-  background-color: #333;
+  background-color: #F6A548;
+  border-color: black;
 }
 
 .offers-container_samuel {
@@ -207,7 +233,7 @@
 
 /* Process section */
 .process_samuel {
-  background-color: #ffffff;
+  background-color: #F9F9F9;
   padding: 20px;
   border: 1px solid #e0e0e0;
 }
@@ -230,6 +256,8 @@
   width: 250px;
   height: 200px;
   margin-bottom: 10px;
+  border: 1px;
+  border-radius: 30px;
 }
 
 .process_step_samuel h3 {
