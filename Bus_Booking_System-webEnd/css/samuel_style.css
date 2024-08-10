@@ -18,10 +18,9 @@
   height: 70px;
 }
 
-.logo_samuel {
-  font-weight: bold;
-  font-size: 24px;
-  text-decoration: none;
+.logo_samuel img{
+  width: 85px;
+  height: 65px;
 }
 
 .navbar_samuel {
