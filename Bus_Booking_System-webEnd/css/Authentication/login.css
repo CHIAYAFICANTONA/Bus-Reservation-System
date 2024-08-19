@@ -11,10 +11,11 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background: #081b29;
+  background-color: #000000;
 }
 
 .wrapper {
+  margin-top: 85px;
   position: relative;
   width: 750px;
   height: 450px;

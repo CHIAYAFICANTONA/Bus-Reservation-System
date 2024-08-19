@@ -1,45 +1,13 @@
 const express = require('express');
 const route = express.Router();
-const u_control = require('../controller/user_control')
+const us_controller = require('../controller/user_controller')
 
-route.get( '/', u_control.getadmins);
+route.get( '/', us_controller.getUsers);
 
-route.post('/user', (req, res) => {
-    let user = { 
-        name,
-        email,
-        phoneNumber,
-        password 
-    } = req.body;
-    
-    res.status(201).send({ 
-        'name' :name,
-        'email' :email,
-        'tel' : phoneNumber,
-        'password' : password
-    }).status(201)
-});
+route.post('/', us_controller.saveUsers);
 
-    route.put('/user', (req, res) => {
-    let user = { 
-        name,
-        email,
-        phoneNumber,
-        password
-    } = req.body;
-    
-    res.status(201).send({ 
-        'update name' :name,
-        'update email' :email,
-        'update tel' :phoneNumber,
-        'update password' :password
-    })
-});
+route.put('/', us_controller.updateUsers);
 
-route.delete('/user/:id', (req, res) => {
-    let id = req.params.id;
-    
-    res.status(200).send(`deleted successfully id ${id}`)
-});
+route.delete('/:id', us_controller.deleteUsers);
 
 module.exports = route

@@ -1,37 +1,13 @@
 const express = require('express');
 const route = express.Router();
-const b_control = require('../controller/bus_control')
+const bu_controller = require('../controller/bus_controller')
 
-route.get( '/', b_control.getbuses);
+route.get( '/', bu_controller.getBus);
 
-route.post('/bus', (req, res) => {
-    let bus = { 
-        licensePlate,
-        driverName
-    } = req.body;
-    
-    res.status(201).send({ 
-        'license plate' :licensePlate,
-        'driver name' : driverName
-    }).status(201)
-});
+route.post('/', bu_controller.saveBus);
 
-    route.put('/bus', (req, res) => {
-    let bus = { 
-        licensePlate,
-        driverName
-    } = req.body;
-    
-    res.status(201).send({ 
-        'update license plate' :licensePlate,
-        'update driver name' : driverName
-    })
-});
+route.put('/', bu_controller.updateBus);
 
-route.delete('/bus/:id', (req, res) => {
-    let id = req.params.id;
-    
-    res.status(200).send(`deleted successfully id ${id}`)
-});
+route.delete('/:id', bu_controller.deleteBus);
 
 module.exports = route
