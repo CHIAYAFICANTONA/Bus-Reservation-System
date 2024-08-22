@@ -10,8 +10,9 @@ const re_route = require('./src/route/reservation_route');
 const ro_route = require('./src/route/room_route');
 const se_route = require('./src/route/seat_route');
 const ti_route = require('./src/route/ticket_route');
+const urb_route = require('./src/route/userroombooking_route');
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}))
@@ -26,6 +27,7 @@ app.use('/reservation', re_route);
 app.use('/room', ro_route);
 app.use('/seat', se_route);
 app.use('/ticket', ti_route);
+app.use('/userroombooking', urb_route);
 app.listen(port, () => {
     console.log(`Server listening on port http://localhost:${port}`)
   });
