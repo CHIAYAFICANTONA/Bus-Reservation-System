@@ -1,45 +1,13 @@
 const express = require('express');
 const route = express.Router();
-const sa_control = require('../controller/subadmin_control')
+const sa_controller = require('../controller/subadmin_controller')
 
-route.get( '/', sa_control.getsubadmins);
+route.get( '/', sa_controller.getSubadmin);
 
-route.post('/subadmin', (req, res) => {
-    let subadmin = { 
-        name,
-        email,
-        phoneNumber,
-        password 
-    } = req.body;
-    
-    res.status(201).send({ 
-        'name' :name,
-        'email' :email,
-        'tel' : phoneNumber,
-        'password' : password
-    }).status(201)
-});
+route.post('/', sa_controller.saveSubadmin);
 
-    route.put('/admin', (req, res) => {
-    let subadmin = { 
-        name,
-        email,
-        phoneNumber,
-        password
-    } = req.body;
-    
-    res.status(201).send({ 
-        'update name' :name,
-        'update email' :email,
-        'update tel' :phoneNumber,
-        'update password' :password
-    })
-});
+route.put('/', sa_controller.updateSubadmin);
 
-route.delete('/subadmin/:id', (req, res) => {
-    let id = req.params.id;
-    
-    res.status(200).send(`deleted successfully id ${id}`)
-});
+route.delete('/:id', sa_controller.deleteSubadmin);
 
 module.exports = route

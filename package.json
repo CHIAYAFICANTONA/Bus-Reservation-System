@@ -9,10 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "concurrently": "^8.2.2",
-    "mysql2": "^3.10.3"
-  },
-  "devDependencies": {},
-  "description": ""
+    "mysql2": "^3.10.3",
+    "nodemon": "^3.1.4"
+  }
 }
