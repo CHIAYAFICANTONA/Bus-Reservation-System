@@ -2,7 +2,7 @@ const express = require('express');
 const route = express.Router();
 const ti_controller = require('../controller/ticket_controller');
 
-route.get( '/', ti_controller_controller.getTicket);
+route.get( '/', ti_controller.getTicket);
 
 route.post('/', ti_controller.saveTicket);
 
