@@ -22,11 +22,13 @@ exports.saveAdmin = async(req, res) => {
         let {name,
             email,
             phoneNumber,
-            password
+            password,
+            image,
+            createdOn
         } = req.body;
         const admin = await dbconnection.query(
-            'INSERT INTO admin(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)',
-            [name, email, phoneNumber, password]);
+            'INSERT INTO admin(name, email, phoneNumber, password, image, createdOn) VALUES(?, ?, ?, ?, ?, ?)',
+            [name, email, phoneNumber, password, image, createdOn]);
         res.status(201).send({
             success: true,
             data: admin,
@@ -46,12 +48,14 @@ exports.updateAdmin = async(req, res) => {
         let {name,
             email,
             phoneNumber,
-            password
+            password,
+            image,
+            createdOn
         } = req.body;
         let id = req.query.id;
         const admin = await dbconnection.query(
-            'UPDATE admin SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?',
-             [name, email, phoneNumber, password, id]
+            'UPDATE admin SET name = ?, email = ?, phoneNumber = ?, password = ?, image = ?, createdON = ? WHERE id= ?',
+             [name, email, phoneNumber, password, image, createdOn, id]
             );
         const updateAdmin = await dbconnection.query(
             'SELECT * FROM admin WHERE id = ?',

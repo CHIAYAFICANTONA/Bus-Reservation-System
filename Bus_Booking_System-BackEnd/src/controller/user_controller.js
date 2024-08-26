@@ -22,11 +22,13 @@ exports.saveUsers = async(req, res) => {
         let {name,
             email,
             phoneNumber,
-            password
+            password,
+            image,
+            createdOn
         } = req.body;
         const user = await dbconnection.query(
-            "INSERT INTO users(name, email, phoneNumber, password) VALUES(?, ?, ?, ?)",
-            [name, email, phoneNumber, password]);
+            "INSERT INTO users(name, email, phoneNumber, password, image, createdOn) VALUES(?, ?, ?, ?, ?, ?)",
+            [name, email, phoneNumber, password, image, createdOn]);
         res.status(201).send({
             success: true,
             data: user,
@@ -46,12 +48,14 @@ exports.updateUsers = async(req, res) => {
         let {name,
             email,
             phoneNumber,
-            password
+            password,
+            image,
+            createdOn
         } = req.body;
         let id = req.query.id;
         const user = await dbconnection.query(
-            "UPDATE users SET name = ?, email = ?, phoneNumber = ?, password = ? WHERE id= ?",
-             [name, email, phoneNumber, password, id]
+            "UPDATE users SET name = ?, email = ?, phoneNumber = ?, password = ?, image = ?, createdOn = ? WHERE id= ?",
+             [name, email, phoneNumber, password,, image, createdOn, id]
             );
         const updateUser = await dbconnection.query(
             "SELECT * FROM users WHERE id = ?",

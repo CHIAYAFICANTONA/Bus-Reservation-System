@@ -3,7 +3,7 @@ const dbconnection = require('../database');
 exports.getPayment = async(req, res) => {
     try {
         const payment = await dbconnection.query(
-            'SELECT p.id, p.amount, p.paymentMethod, p.isSuccessful, r.reservationDate AS reservation FROM payment p LEFT JOIN reservation r ON p.reservationId = r.id'
+            'SELECT p.id, p.amount, p.paymentMethod, p.isSuccessful, r.reservationDate AS reservation, p.paymentOn FROM payment p LEFT JOIN reservation r ON p.reservationId = r.id'
         );
         res.status(200).send({
             success: true,
@@ -25,7 +25,8 @@ exports.savePayment = async(req, res) => {
             reservationId,
             amount,
             paymentMethod,
-            isSuccessful
+            isSuccessful,
+            PaymentOn
         } = req.body;
         const control_reservationId = await dbconnection.query(
             'SELECT * FROM reservation WHERE id = ?', [reservationId]
@@ -39,8 +40,8 @@ exports.savePayment = async(req, res) => {
             })
         }else{
             const payment = await dbconnection.query(
-                "INSERT INTO payment(reservationId, amount, paymentMethod, isSuccessful) VALUES(?, ?, ?, ?)",
-                [reservationId, amount, paymentMethod, isSuccessful]);
+                "INSERT INTO payment(reservationId, amount, paymentMethod, isSuccessful, paymentOn) VALUES(?, ?, ?, ?, ?)",
+                [reservationId, amount, paymentMethod, isSuccessful, PaymentOn]);
             res.status(201).send({
                 success: true,
                 data: payment,
@@ -62,12 +63,13 @@ exports.updatePayment = async(req, res) => {
             reservationId,
             amount,
             paymentMethod,
-            isSuccessful
+            isSuccessful,
+            PaymentOn
         } = req.body;
         let id = req.query.id;
         const payment = await dbconnection.query(
-            'UPDATE payment SET reservationId = ?, amount = ?, paymentMethod = ?, isSuccessful = ? WHERE id= ?',
-             [reservationId, amount, paymentMethod, isSuccessful, id]
+            'UPDATE payment SET reservationId = ?, amount = ?, paymentMethod = ?, isSuccessful = ?, paymentOn = ? WHERE id= ?',
+             [reservationId, amount, paymentMethod, isSuccessful, PaymentOn, id]
             );
         const updatePayment = await dbconnection.query(
             'SELECT * FROM payment WHERE id = ?',
