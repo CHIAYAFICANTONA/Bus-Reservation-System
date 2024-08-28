@@ -24,7 +24,8 @@ exports.saveRoom = async(req, res) => {
         let {
             hotelId,
             roomNumber,
-            isAvailable
+            isAvailable,
+            image
         } = req.body;
         const control_hotelId = await dbconnection.query(
             'SELECT * FROM hotel WHERE id = ?', [hotelId]
@@ -38,8 +39,8 @@ exports.saveRoom = async(req, res) => {
             })
         }else{
             const room = await dbconnection.query(
-                'INSERT INTO room(hotelId, roomNumber, isAvailable) VALUES(?, ?, ?)',
-                [hotelId, roomNumber, isAvailable]);
+                'INSERT INTO room(hotelId, roomNumber, isAvailable, image) VALUES(?, ?, ?, ?)',
+                [hotelId, roomNumber, isAvailable, image]);
             res.status(201).send({
                 success: true,
                 data: room,
@@ -60,12 +61,13 @@ exports.updateRoom = async(req, res) => {
         let {
             hotelId,
             roomNumber,
-            isAvailable
+            isAvailable,
+            image
         } = req.body;
         let id = req.query.id;
         const room = await dbconnection.query(
-            'UPDATE room SET hotelId = ?, roomNumber = ?, isAvailable = ? WHERE id= ?',
-             [hotelId, roomNumber, isAvailable, id]
+            'UPDATE room SET hotelId = ?, roomNumber = ?, isAvailable = ?, image = ? WHERE id= ?',
+             [hotelId, roomNumber, isAvailable, image, id]
             );
         const updateRoom = await dbconnection.query(
             'SELECT * FROM room WHERE id = ?',

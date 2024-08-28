@@ -1,9 +1,8 @@
 const bodyparser = require('body-parser');
 const express = require('express');
-const ad_route = require('./src/route/admin_route');
+const ag_route = require('./src/route/agency_route')
 const bu_route = require('./src/route/bus_route');
 const ho_route = require('./src/route/hotel_route');
-const sa_route = require('./src/route/subadmin_route');
 const us_route = require('./src/route/user_route');
 const pa_route = require('./src/route/payment_route');
 const re_route = require('./src/route/reservation_route');
@@ -17,10 +16,9 @@ const port = 8000;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}))
 
-app.use('/admin', ad_route);
+app.use('/agency', ag_route);
 app.use('/bus', bu_route);
 app.use('/hotel', ho_route);
-app.use('/subadmin', sa_route);
 app.use('/user', us_route);
 app.use('/payment', pa_route);
 app.use('/reservation', re_route);
