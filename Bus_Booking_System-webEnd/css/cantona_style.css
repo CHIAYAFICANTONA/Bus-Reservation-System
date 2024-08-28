@@ -47,7 +47,7 @@ header{
     align-items: center;
 }
 
-.email-form form {
+.email-form  {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,8 @@ header{
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: border-box;
 }
 
 .email-form button {
@@ -79,3 +80,6 @@ header{
     font-size: 1.2em;
     color: #007BFF;
     }
+.email-form form{
+    display: flex;
+}
