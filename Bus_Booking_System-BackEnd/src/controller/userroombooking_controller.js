@@ -3,7 +3,7 @@ const dbconnection = require('../database');
 exports.getUserRoomBooking = async(req, res) => {
     try {
         const UserRoomBooking = await dbconnection.query(
-            'SELECT u.name AS user, r.roomNumber AS roomNumber FROM userroombooking urb LEFT JOIN user u ON urb.userId = u.id LEFT JOIN room r ON urb.roomID = r.id'
+            'SELECT u.name AS user, r.roomNumber AS roomNumber, h.name AS hotelName, h.location AS hotelLocation FROM userroombooking urb LEFT JOIN user u ON urb.userId = u.id LEFT JOIN room r ON urb.roomID = r.id LEFT JOIN hotel h ON r.hotelId = h.id'
         );
         res.status(200).send({
             success: true,

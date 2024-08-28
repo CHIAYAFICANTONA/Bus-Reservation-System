@@ -3,7 +3,7 @@ const dbconnection = require('../database');
 exports.getReservation = async(req, res) => {
     try {
         const reservation = await dbconnection.query(
-            'SELECT u.name AS user, b.licencePlate AS bus, s.id AS seat, reservationDate, reservedOn FROM reservation r LEFT JOIN user u ON r.userId = u.id LEFT JOIN bus b ON r.busID = b.id LEFT JOIN seat s ON r.seatID = s.id'
+            'SELECT u.name AS user, b.licensePlate AS busLicensePlate, b.route AS busRoute, s.id AS seat, t.id AS ticketId, pm.amount AS tripPrice, pm.paymentMethod AS paymentMethod, reservationDate, reservedOn FROM reservation r LEFT JOIN user u ON r.userId = u.id LEFT JOIN bus b ON r.busID = b.id LEFT JOIN seat s ON r.seatID = s.id LEFT JOIN ticket t ON t.reservationId = r.id LEFT JOIN payment pm ON pm.reservationId = r.id'
         );
         res.status(200).send({
             success: true,
@@ -29,7 +29,7 @@ exports.saveReservation = async(req, res) => {
             reservedOn
         } = req.body;
         const control_userId = await dbconnection.query(
-            'SELECT * FROM user WHERE id = ?', [userId]
+            'SELECT * FROM users WHERE id = ?', [userId]
         );
 
         const control_busId = await dbconnection.query(
