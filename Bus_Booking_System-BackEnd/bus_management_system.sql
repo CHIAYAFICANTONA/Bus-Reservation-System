@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2024 at 09:45 AM
+-- Generation Time: Aug 28, 2024 at 07:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,7 +32,20 @@ CREATE TABLE `admin` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phoneNumber` int(20) DEFAULT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `image` blob NOT NULL,
+  `createdOn` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agency`
+--
+
+CREATE TABLE `agency` (
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,9 +57,12 @@ CREATE TABLE `admin` (
 CREATE TABLE `bus` (
   `id` int(11) NOT NULL,
   `licensePlate` varchar(10) NOT NULL,
-  `driverName` varchar(50) NOT NULL,
+  `totalSeats` int(11) NOT NULL,
   `departure` varchar(50) NOT NULL,
-  `destination` varchar(50) NOT NULL
+  `destination` varchar(50) NOT NULL,
+  `image` blob NOT NULL,
+  `departureDateTime` datetime NOT NULL,
+  `agencyId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -58,7 +74,9 @@ CREATE TABLE `bus` (
 CREATE TABLE `hotel` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `location` varchar(50) NOT NULL
+  `location` varchar(50) NOT NULL,
+  `image` blob NOT NULL,
+  `totalRooms` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -72,7 +90,8 @@ CREATE TABLE `payment` (
   `reservationId` int(11) NOT NULL,
   `amount` double NOT NULL,
   `paymentMethod` varchar(50) NOT NULL,
-  `isSuccessful` tinyint(1) NOT NULL DEFAULT 0
+  `isSuccessful` tinyint(1) NOT NULL DEFAULT 0,
+  `paymentOn` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -86,8 +105,30 @@ CREATE TABLE `reservation` (
   `userId` int(11) DEFAULT NULL,
   `busId` int(11) DEFAULT NULL,
   `seatId` int(11) DEFAULT NULL,
-  `reservationDate` date NOT NULL
+  `reservationDate` date NOT NULL,
+  `reservationOn` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role`
+--
+
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`id`, `name`) VALUES
+(1, 'AGENCY_MANAGER'),
+(2, 'ADMIN'),
+(3, 'CLIENT'),
+(4, 'HOTEL_MANAGER');
 
 -- --------------------------------------------------------
 
@@ -99,7 +140,8 @@ CREATE TABLE `room` (
   `id` int(11) NOT NULL,
   `hotelId` int(11) NOT NULL,
   `roomNumber` varchar(50) NOT NULL,
-  `isAvailable` tinyint(1) NOT NULL DEFAULT 1
+  `isAvailable` tinyint(1) NOT NULL DEFAULT 1,
+  `image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,20 +154,6 @@ CREATE TABLE `seat` (
   `id` int(11) NOT NULL,
   `busId` int(11) DEFAULT NULL,
   `isAvailable` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subadmin`
---
-
-CREATE TABLE `subadmin` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phoneNumber` int(20) DEFAULT NULL,
-  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -163,7 +191,10 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phoneNumber` int(20) DEFAULT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `image` blob NOT NULL,
+  `createdOn` datetime NOT NULL DEFAULT current_timestamp(),
+  `roleId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -175,14 +206,22 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phoneNumber` (`phoneNumber`);
+
+--
+-- Indexes for table `agency`
+--
+ALTER TABLE `agency`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `bus`
 --
 ALTER TABLE `bus`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `licensePlate` (`licensePlate`);
+  ADD UNIQUE KEY `licensePlate` (`licensePlate`),
+  ADD KEY `agencyId` (`agencyId`);
 
 --
 -- Indexes for table `hotel`
@@ -207,6 +246,12 @@ ALTER TABLE `reservation`
   ADD KEY `seatId` (`seatId`);
 
 --
+-- Indexes for table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `room`
 --
 ALTER TABLE `room`
@@ -220,13 +265,6 @@ ALTER TABLE `room`
 ALTER TABLE `seat`
   ADD PRIMARY KEY (`id`),
   ADD KEY `busId` (`busId`);
-
---
--- Indexes for table `subadmin`
---
-ALTER TABLE `subadmin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `ticket`
@@ -247,7 +285,8 @@ ALTER TABLE `userroombooking`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `roleId` (`roleId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -284,6 +323,12 @@ ALTER TABLE `reservation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `role`
+--
+ALTER TABLE `role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
@@ -293,12 +338,6 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `seat`
 --
 ALTER TABLE `seat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `subadmin`
---
-ALTER TABLE `subadmin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -316,6 +355,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bus`
+--
+ALTER TABLE `bus`
+  ADD CONSTRAINT `bus_ibfk_1` FOREIGN KEY (`agencyId`) REFERENCES `agency` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `payment`
@@ -355,6 +400,12 @@ ALTER TABLE `ticket`
 ALTER TABLE `userroombooking`
   ADD CONSTRAINT `userroombooking_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `userroombooking_ibfk_2` FOREIGN KEY (`roomId`) REFERENCES `room` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
