@@ -3,7 +3,7 @@ const dbconnection = require('../database');
 exports.getReservation = async(req, res) => {
     try {
         const reservation = await dbconnection.query(
-            'SELECT u.name AS user, b.licencePlate AS bus, s.id AS seat, reservationDate FROM reservation r LEFT JOIN user u ON r.userId = u.id LEFT JOIN bus b ON r.busID = b.id LEFT JOIN seat s ON r.seatID = s.id'
+            'SELECT u.name AS user, b.licensePlate AS busLicensePlate, b.route AS busRoute, s.id AS seat, t.id AS ticketId, pm.amount AS tripPrice, pm.paymentMethod AS paymentMethod, reservationDate, reservedOn FROM reservation r LEFT JOIN user u ON r.userId = u.id LEFT JOIN bus b ON r.busID = b.id LEFT JOIN seat s ON r.seatID = s.id LEFT JOIN ticket t ON t.reservationId = r.id LEFT JOIN payment pm ON pm.reservationId = r.id'
         );
         res.status(200).send({
             success: true,
@@ -25,10 +25,11 @@ exports.saveReservation = async(req, res) => {
             userId,
             busId,
             seatId,
-            reservationDate
+            reservationDate,
+            reservedOn
         } = req.body;
         const control_userId = await dbconnection.query(
-            'SELECT * FROM user WHERE id = ?', [userId]
+            'SELECT * FROM users WHERE id = ?', [userId]
         );
 
         const control_busId = await dbconnection.query(
@@ -99,8 +100,8 @@ exports.saveReservation = async(req, res) => {
                  control_busId[0].length!==0 &&
                  control_seatId[0].length!==0){
             const payment = await dbconnection.query(
-                'INSERT INTO reservation(userId, busId, seatId, reservationDate) VALUES(?, ?, ?, ?)',
-                [userId, busId, seatId, reservationDate]);
+                'INSERT INTO reservation(userId, busId, seatId, reservationDate, reservedOn) VALUES(?, ?, ?, ?, ?)',
+                [userId, busId, seatId, reservationDate, reservedOn]);
             res.status(201).send({
                 success: true,
                 data: payment,
@@ -122,12 +123,13 @@ exports.updateReservation = async(req, res) => {
             userId,
             busId,
             seatId,
-            reservationDate
+            reservationDate,
+            reservedOn
         } = req.body;
         let id = req.query.id;
         const reservation = await dbconnection.query(
-            "UPDATE reservation SET userId = ?, busId = ?, seatId = ?, reservationDate = ? WHERE id= ?",
-             [userId, busId, seatId, reservationDate, id]
+            "UPDATE reservation SET userId = ?, busId = ?, seatId = ?, reservationDate = ?, reservedOn = ? WHERE id= ?",
+             [userId, busId, seatId, reservationDate, reservedOn, id]
             );
         const updateReservation = await dbconnection.query(
             "SELECT * FROM reservation WHERE id = ?",

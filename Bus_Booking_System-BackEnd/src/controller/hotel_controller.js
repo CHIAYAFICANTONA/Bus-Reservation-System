@@ -21,11 +21,13 @@ exports.saveHotel = async(req, res) => {
     try {
         let {
             name,
-            location
+            location,
+            image,
+            totalRooms
         } = req.body;
         const hotel = await dbconnection.query(
-            'INSERT INTO bus(name, location) VALUES(?, ?)',
-            [name, location]);
+            'INSERT INTO bus(name, location, image, totalRooms) VALUES(?, ?, ?, ?)',
+            [name, location, image, totalRooms]);
         res.status(201).send({
             success: true,
             data: hotel,
@@ -44,12 +46,14 @@ exports.updateHotel = async(req, res) => {
     try {
         let {
             name,
-            location
+            location,
+            image,
+            totalRooms
         } = req.body;
         let id = req.query.id;
         const hotel = await dbconnection.query(
-            'UPDATE hotel SET name = ?, location = ? WHERE id= ?',
-             [name, location, id]
+            'UPDATE hotel SET name = ?, location = ?, image = ?, totalRooms = ? WHERE id= ?',
+             [name, location, image, totalRooms, id]
             );
         const updateBus = await dbconnection.query(
             'SELECT * FROM hotel WHERE id = ?',

@@ -2,7 +2,7 @@ const express = require('express');
 const route = express.Router();
 const se_controller = require('../controller/seat_controller');
 
-route.get( '/', se_controller_controller.getSeat);
+route.get( '/', se_controller.getSeat);
 
 route.post('/', se_controller.saveSeat);
 
