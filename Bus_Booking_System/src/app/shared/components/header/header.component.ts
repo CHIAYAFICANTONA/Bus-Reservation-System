@@ -14,23 +14,28 @@ export class HeaderComponent {
   public headerItems: HeaderItems[] = [
     {
       id: 1,
-      link: '',
+      link: '#home',
       title: 'Home'
     },
     {
       id: 2,
-      link: '',
-      title: 'Bookings'
+      link: '#offers',
+      title: 'Offers'
     },
     {
       id: 3,
-      link: '',
-      title: 'About'
+      link: '#howTo',
+      title: 'How To'
     },
     {
       id: 4,
-      link: '',
-      title: 'Contact'
+      link: '#popular',
+      title: 'Popular Destinations'
+    },
+    {
+      id: 5,
+      link: '#faq',
+      title: 'FAQs'
     }
   ];
 

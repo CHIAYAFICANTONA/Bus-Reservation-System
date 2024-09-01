@@ -1,78 +1,297 @@
 <main class="bg-background min-h-screen">
-  <section class="hero grid grid-cols-1 md:grid-cols-2 bg-primary text-white py-20">
-    <div class="flex justify-center items-center order-1 md:order-2">
-      <img class="w-full h-auto" src="home/city-bus-animate.svg" alt="City Bus">
-    </div>
-    <div class="flex flex-col justify-center items-center text-center md:text-left order-2 md:order-1">
-      <h1 class="text-5xl font-display mb-6">Book Your Bus Tickets Easily</h1>
-      <p class="text-lg mb-8">Quick and convenient bus ticket reservations at your fingertips.</p>
-      <a routerLink="/signIn"
-         class="bg-secondary text-white py-3 px-8 rounded shadow-lg hover:bg-secondary-dark transition duration-300">
-        Start Booking
-      </a>
-    </div>
-  </section>
-  <section class="features py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-display text-primary text-center mb-12">Why Choose Us?</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="feature-item bg-white p-6 rounded-2xl shadow-lg text-center">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
-              <path d="..."></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold text-primary mb-2">Convenient Booking</h3>
-          <p class="text-gray-700">Book tickets from the comfort of your home at any time.</p>
+  <body class="mybody">
+
+  <!-------------------------------------My Section 1--------------------------------------->
+  <!-------------------------------------------------------------------------------------->
+  <div id="home" class="section1-1">
+    <div class="section1" style="background-image: url(home/background1.png); background-repeat: no-repeat">
+
+      <!----------------------------------My Section1 left-side-------------------------------->
+
+      <div class="section1-left">
+
+        <h1>Streamline your Bus Travel</h1>
+        <div class="left-text">
+          <h3>and buy your bus ticket online with</h3>
         </div>
-        <div class="feature-item bg-white p-6 rounded-2xl shadow-lg text-center">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
-              <path d="..."></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold text-primary mb-2">Affordable Prices</h3>
-          <p class="text-gray-700">Get the best prices with no hidden fees.</p>
+        <img src="home/krome_logo.png" alt="" class="left-logo">
+
+        <div class="section1-left-btn">
+          <div class="section1-left-btn1"><a routerLink="/signIn">Buy ticket</a></div>
         </div>
-        <div class="feature-item bg-white p-6 rounded-2xl shadow-lg text-center">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-secondary mx-auto" fill="currentColor" viewBox="0 0 24 24">
-              <path d="..."></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold text-primary mb-2">Reliable Service</h3>
-          <p class="text-gray-700">Trust in our reliable service for a smooth journey.</p>
-        </div>
+        <p class="section1-text">Check schedules, Compare prices, Book your tickets, and Hotels, All Online</p>
+      </div>
+
+      <!----------------------------------My Section1 right-side-------------------------------->
+      <div class="section1-right">
+        <img src="home/section1.PNG" alt="" class="section1-right-img" id="myIma">
+        <img src="home/car.png" alt="" class="section1-right-img2">
       </div>
     </div>
-  </section>
-  <section class="testimonials bg-gray-100 py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-display text-primary text-center mb-12">What Our Customers Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="testimonial bg-white p-6 rounded-2xl shadow-lg">
-          <p class="text-gray-700 mb-4">"The booking process was seamless and the prices were unbeatable!"</p>
-          <p class="text-secondary font-semibold">- John Doe</p>
+  </div>
+
+
+
+  <!-------------------------------------My offers section--------------------------------------->
+  <!-------------------------------------------------------------------------------------->
+  <div id="offers" class="offers-1">
+    <div class="offers">
+      <h1>Offers</h1>
+      <div class="cards">
+        <div class="offer-card">
+          <div class="card-title">Musango</div>
+          <div class="percentage">-30%</div>
+          <p class="offer-description">Save 30% on a round trip with Musango</p>
         </div>
-        <div class="testimonial bg-white p-6 rounded-2xl shadow-lg">
-          <p class="text-gray-700 mb-4">"I love how easy it is to book tickets, and the service is top-notch."</p>
-          <p class="text-secondary font-semibold">- Jane Smith</p>
+
+
+        <div class="offer-card">
+          <div class="card-title">Nso Boyz</div>
+          <div class="percentage">-10%</div>
+          <p class="offer-description">Save 10% on a trip to Bamenda with Nso Boyz</p>
         </div>
-        <div class="testimonial bg-white p-6 rounded-2xl shadow-lg">
-          <p class="text-gray-700 mb-4">"Reliable and affordable, I always use this service for my travels."</p>
-          <p class="text-secondary font-semibold">- Alice Johnson</p>
+
+
+        <div class="offer-card">
+          <div class="card-title">Finex Voyage</div>
+          <div class="percentage">-40%</div>
+          <p class="offer-description">Save 40% on a round trip with Finex Voyage</p>
+        </div>
+
+
+        <div class="offer-card">
+          <div class="card-title">Vatican Express</div>
+          <div class="percentage">-20%</div>
+          <p class="offer-description">Save 20% on a trip to Baffousam with Vatican Express</p>
+        </div>
+
+
+        <div class="offer-card">
+          <div class="card-title">Garanti Express</div>
+          <div class="percentage">-12%</div>
+          <p class="offer-description">Save 12% on a trip to Buea with Garanti Express</p>
         </div>
       </div>
+      <div class="view" style="transition: 0, 2 ease;">View All</div>
     </div>
-  </section>
-  <section class="cta bg-primary text-white py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-display mb-6">Ready to Start Your Journey?</h2>
-      <p class="text-lg mb-8">Book your bus tickets today and enjoy a hassle-free travel experience.</p>
-      <a href="#"
-         class="bg-secondary text-white py-3 px-8 rounded-xl shadow-lg hover:bg-secondary-dark transition duration-300">
-        Book Now
-      </a>
+  </div>
+
+
+
+  <!-------------------------------------My buy section--------------------------------------->
+  <!-------------------------------------------------------------------------------------->
+
+  <div id="howTo" class="buy-1">
+    <div class="buy">
+      <h1 >How to Book Tickets?</h1>
+
+      <div class="buy-card1">
+        <div class="buy-card" style="border-top-left-radius: 20%;">
+          <h2 class="buy-step">Step1</h2>
+          <img src="home/choose%20trip.png" alt="" class="buy-image">
+          <h3 class="buy-title">Enter trip details</h3>
+          <div class="buy-text">
+            <p>Enter Source, Destination, Travel Date, and then click on search for your results</p>
+          </div>
+        </div>
+
+        <div class="buy-card" style="border-top-right-radius: 20%;">
+          <h2 class="buy-step">Step2</h2>
+          <img src="home/choose%20agency.png" alt="" class="buy-image">
+          <h3 class="buy-title">Select your Agency</h3>
+          <div class="buy-text">
+            <p>From your search results, choose your preferred agency to travel through according to your requirements</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="buy-card1">
+        <div class="buy-card" style="border-bottom-left-radius: 20%;">
+          <h2 class="buy-step">Step3</h2>
+          <img src="home/bus12.png" alt="" class="buy-image">
+          <h3 class="buy-title">Select your bus and seat(s)</h3>
+          <div class="buy-text">
+            <p>Select bus, seats, boarding point, dropping point, fill passenger details and click 'Make payment'</p>
+          </div>
+        </div>
+
+        <div class="buy-card" style="border-bottom-right-radius: 20%;">
+          <h2 class="buy-step">Step4</h2>
+          <img src="home/make%20payment.png" alt="" class="buy-image">
+          <h3 class="buy-title">Make easy payment</h3>
+          <div class="buy-text">
+            <p>Pay using Mobile Money or Orange Money. Many other options coming soon</p>
+          </div>
+        </div>
+      </div>
+      <p class="buy-btn"><a routerLink="/signUp">Buy my ticket Now!!</a></p>
+
     </div>
-  </section>
+  </div>
+
+
+
+  <!-------------------------------------My destination section--------------------------------------->
+  <!-------------------------------------------------------------------------------------->
+  <div id="popular" class="destination-1">
+    <div class="destination">
+      <h1 >Popular destination right now</h1>
+
+      <div class="dest-card">
+
+        <div class="destination-card">
+          <div class="card-image">
+            <img src="home/Garoua.jpeg" alt="">
+          </div>
+          <div class="dest-name">Garoua</div>
+          <div class="card-text">
+            <div>From <b>Yaoundé</b></div>
+            <span>|</span>
+            <div class="go"><a routerLink="/signUp">Go</a></div>
+          </div>
+        </div>
+
+
+
+        <div class="destination-card">
+          <div class="card-image">
+            <img src="home/Yaounde.jpeg" alt="">
+          </div>
+          <div class="dest-name">Yaounde</div>
+          <div class="card-text">
+            <div>From <b>Bamenda</b></div>
+            <span>|</span>
+            <div class="go"><a routerLink="/signUp">Go</a></div>
+          </div>
+        </div>
+
+
+        <div class="destination-card">
+          <div class="card-image">
+            <img src="home/Bamenda.jpeg" alt="">
+          </div>
+          <div class="dest-name">Bamenda</div>
+          <div class="card-text">
+            <div>From <b>Baffoussam</b></div>
+            <span>|</span>
+            <div class="go"><a routerLink="/signUp">Go</a></div>
+          </div>
+        </div>
+
+
+        <div class="destination-card">
+          <div class="card-image">
+            <img src="home/Baffousam.jpeg" alt="">
+          </div>
+          <div class="dest-name">Baffoussam</div>
+          <div class="card-text">
+            <div>From <b>Yaoundé</b></div>
+            <span>|</span>
+            <div class="go"><a routerLink="/signUp">Go</a></div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- <div class="carousel slide" data-ride="carousel" id="carouselExampleControls">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="images/bacbg.jpg" alt="" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                  <img src="images/kevine.png" alt="" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                  <img src="images/krome (2).jpg" alt="" class="d-block w-100">
+              </div>
+          </div>
+          <a href="#carouselExampleControls" class="carousel-control-prev" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+
+          <a href="#carouselExampleControls" class="carousel-control-next" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+      </div> -->
+    </div>
+  </div>
+
+
+  <!-------------------------------------My faq section----------------------------------->
+  <!-------------------------------------------------------------------------------------->
+
+  <div id="faq" class="faq">
+    <h1 >FAQs</h1>
+    <div class="faq-card">
+      <div class="faq-title">How to book bus tickets online?</div>
+      <div class="faq-text">Book tickets online is 03 easy steps: Visit the web site or App
+        Select your seat and payment option, and confirm your booking to receive your printable e-tickets
+      </div>
+    </div>
+
+
+    <div class="faq-card-right">
+      <div class="faq-title">Is there any promotion for online Booking?</div>
+      <div class="faq-text">Yes! There are many promotions and discounts available through online booking
+        discount codes. Look for promo codes or voucher codes that can give you a percentage discount off your
+        booking
+      </div>
+    </div>
+
+
+    <div class="faq-card">
+      <div class="faq-title">Can I reschedule my bus ticket?</div>
+      <div class="faq-text">Yes! you can reschedule your bus ticket. Bus ticket rescheduling policies
+        vary depending on their operator, but generally, you can reschedule your ticket up to a certain
+        time before departure(eg: 24hours) and a rescheduling fee may apply, some tickets may not have rescheduling
+        options or have restrictions for more clarifications, check with the bus operator for their specific
+        rescheduling policy
+      </div>
+    </div>
+
+
+    <div class="faq-card-right">
+      <div class="faq-title">Can bus ticket be cancelled?</div>
+      <div class="faq-text">Yes! Bus ticket can be cancelled. Cancellation policies vary depending
+        on the bus operator, but generally tickets can be cancelled up to a certain time before departure
+        (eg: 24hours). Refunds or voucher may be issued. and a cancellation fee. Check with the bus
+        operator for their specific cancellation policy
+      </div>
+    </div>
+
+
+    <div class="faq-card">
+      <div class="faq-title">Which bus operators are available for online booking?</div>
+      <div class="faq-text">In Cameroon, some bus operators that offer online booking include,
+        GTVC (Groupe de Transport Victoria Cameroon),
+        STC (Société de Transport Camerounaise), Maetur, Fobus Transport,
+        Transcam and Union des Transporteurs du Cameroun (UTC).
+      </div>
+    </div>
+
+
+    <div class="faq-card-right">
+      <div class="faq-title">Which routes are available for online booking?</div>
+      <div class="faq-text">In Cameroon, our team provides online booking for major roads connecting urban and rural areas like:
+
+        - Douala-Yaoundé
+        - Yaoundé-Bamenda
+        - Bamenda-Bafut
+        - Douala-Bafoussam
+        - Yaoundé-Garoua
+        - Douala-Limbe
+        - Ambam - Yaounde
+
+        These roads are served by our bus operators.
+      </div>
+    </div>
+    <!--<div class="view" style=":hover{transition: 0.5 ease; med};@media screen and (max-width: 900px) {:hover{transition: 0.5 ease;}}">View All</div>-->
+
+  </div>
+
+
+  </body>
 </main>
