@@ -1,0 +1,780 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'maiandra GD';
+}
+
+/****************************************section1****************************************/
+/*****************************************************************************************/
+
+.section1 {
+  margin-top: 1px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border-bottom-left-radius: 40%;
+  background-color: white;
+}
+
+.section1-1 {
+  background-color: #fde6c9;
+}
+
+.section1 .section1-left {
+  width: 50%;
+  padding: 15px 0 0 50px;
+}
+
+.section1 .section1-right {
+  width: 50%;
+}
+
+.section1 .section1-right .section1-right-img {
+  width: 200px;
+  margin: 50px 0 0 300px;
+  justify-content: right;
+}
+
+#myImage{
+  position: absolute;
+  transform: translate(-10%, -10%);
+  transition: all 2s ease-in-out;
+  margin-left: 70%;
+  margin-top: 10%;
+}
+
+.section1 .section1-right .section1-right-img2 {
+  width: 450px;
+  margin: 50px 0 0 80px;
+}
+
+
+/****************************************section1 left****************************************/
+.section1 .section1-left h1 {
+  font-weight: bold;
+  color: #032485;
+  font-size: 70px;
+}
+
+.section1 .section1-left .left-text {
+  width: 470px;
+  height: 50px;
+  background: #f88521;
+  font-size: 180%;
+  padding-left: 10px;
+  border-radius: 10px;
+  align-content: center;
+  box-shadow: 0 0 15px #f88521;
+}
+
+.section1 .section1-left h3 {
+  color: white;
+}
+
+.section1 .section1-text {
+  color: grey;
+  margin-left: 10px;
+}
+
+.section1 .section1-left img {
+  width: 300px;
+  margin: 30px 0 0 0;
+}
+
+.section1 .section1-left-btn {
+  display: flex;
+  margin: 30px 0 0 10px;
+}
+
+.section1 .section1-left-btn1 {
+  padding: 7px 15px;
+  background-color: #032485;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+
+.section1 .section1-left-btn1:hover {
+  box-shadow: 0 0 15px #032485;
+}
+
+
+
+
+
+/****************************************offers section****************************************/
+/*****************************************************************************************/
+
+.offers {
+  width: 100%;
+  height: 550px;
+  background-color: #fde6c9;
+  text-align: center;
+  border-top-right-radius: 50%;
+  padding-top: 50px;
+}
+
+.offers-1 {
+  background-color: white;
+}
+
+.offers h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.offers .cards {
+  display: flex;
+  margin-top: 90px;
+  width: 100%;
+  justify-content: center;
+}
+
+.offers .cards .offer-card {
+  width: 200px;
+  height: 250px;
+  background-color: #f88521;
+  border-radius: 10px;
+  align-content: center;
+  color: white;
+  margin-right: 15px;
+  transition: 0.3s ease;
+}
+
+.offers .cards .offer-card:hover {
+  width: 210px;
+  height: 260px;
+  margin-right: 5px;
+  box-shadow: 0px 7px 15px rgb(165, 39, 177);
+
+}
+
+
+.offers .cards .offer-card .card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.offers .cards .offer-card .percentage {
+  font-size: 60px;
+  font-weight: bold;
+  color: #f0aa6d;
+  -webkit-text-stroke-color: white;
+}
+
+.offers .view {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #032485;
+  color: #032485;
+  align-content: center;
+  position: absolute;
+  right: 0;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.offers .view:hover {
+  background-color: #032485;
+  color: white;
+}
+
+/****************************************buy section****************************************/
+/*****************************************************************************************/
+.buy {
+  width: 100%;
+  height: 130vh;
+  background-color: #bcbcbc;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 20%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.buy-1 {
+  background-color: #fde6c9;
+}
+
+.buy h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.buy .buy-card {
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  align-content: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.buy .buy-card img {
+  margin-top: 5px;
+  width: 100px;
+  margin-left: 13vw;
+}
+
+.buy .buy-card .buy-step {
+  font-weight: bold;
+}
+
+.buy-card1 {
+
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.buy .buy-btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #032485;
+  color: white;
+  align-content: center;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy .buy-btn:hover {
+  box-shadow: 0 0 20px #032485;
+  width: 205px;
+  height: 45px;
+}
+
+
+/****************************************destination section****************************************/
+/*****************************************************************************************/
+.destination-1 {
+  background-color: #bcbcbc;
+}
+
+.destination {
+  width: 100%;
+  height: 65vh;
+  background-color: #fde6c9;
+  border-top-right-radius: 20%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.destination h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.destination .destination-card {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 5px black;
+  margin-right: 25px;
+}
+
+.destination .destination-card .card-image {
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.destination .destination-card .card-image img {
+  width: 250px;
+}
+
+.destination .destination-card .card-text {
+  display: flex;
+  width: 250px;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.go {
+  width: 50px;
+  height: 30px;
+  background-color: #032485;
+  color: white;
+  border-radius: 50px;
+  align-content: center;
+  cursor: pointer;
+}
+
+.go:hover {
+  box-shadow: 0 0 20px #032485;
+}
+
+.dest-card {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.destination-card .dest-name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel {
+  width: 500px;
+  height: 400px;
+}
+
+
+
+/****************************************FAQ section****************************************/
+/*****************************************************************************************/
+
+.faq {
+  width: 100%;
+  height: 255vh;
+  border-top: 5px solid #f0aa6d;
+  text-align: center;
+  padding: 20px 50px;
+}
+
+.faq h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.faq-card {
+  width: 650px;
+  height: 200px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #032485;
+  align-content: center;
+  padding: 15px;
+  color: #BCBCBC;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.faq .faq-card-right {
+  width: 650px;
+  height: 200px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: #032485;
+  align-content: center;
+  padding: 15px;
+  color: #BCBCBC;
+  text-align: right;
+  margin-bottom: 50px;
+  margin-left: 43%;
+}
+
+.faq-title {
+  font-size: 30px;
+  color: #F88521;
+}
+
+
+.faq .view {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #032485;
+  color: #032485;
+  align-content: center;
+  position: absolute;
+  right: 0;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.faq .view:hover {
+  background-color: #032485;
+  color: #BCBCBC;
+}
+
+
+
+
+/****************************************footer section****************************************/
+/*****************************************************************************************/
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #474747;
+  border-top: 5px solid gray;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+footer .foot {
+  display: flex;
+}
+
+footer .foot a {
+  text-decoration: none;
+  color: #bcbcbc;
+}
+
+footer .foot-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/***************************************Responsive****************************/
+/****************************************************************************/
+
+
+/***************************************header responsive****************************/
+/****************************************************************************/
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .nav .navbar {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background-color: #032485;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    top: -100%;
+    transition: 0.5s ease;
+
+  }
+
+  .active .navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .active .burger {
+    position: fixed;
+  }
+
+
+
+  .nav .navbar ul {
+    display: block;
+  }
+
+  .nav .navbar ul li {
+    margin-bottom: 25px;
+  }
+
+  .user-login,
+  .profile {
+    display: none;
+  }
+
+  .home-page {
+    padding: 0 25px;
+  }
+
+  .nav .logo img {
+    width: 100px;
+  }
+
+
+  .burger {
+    display: block;
+  }
+
+
+  body{
+    overflow-x: hidden;
+  }
+  .active-signin{
+    overflow: hidden;
+  }
+
+  q
+
+
+
+
+
+    /***************************************section1 responsive****************************/
+    /****************************************************************************/
+  .section1 {
+    display: block;
+    border-bottom-left-radius: 150px;
+  }
+
+  .section1-1{
+    height: 65vh;
+  }
+
+  .section1 .section1-left {
+    padding: 40px 0 0 20px;
+  }
+
+  .user-login2{
+    display: flex;
+    justify-content: right;
+  }
+
+
+  .login2 {
+    display: flex;
+  }
+
+
+  .section1 .section1-left h1 {
+    font-size: 50px;
+  }
+
+
+  .section1 .section1-left .left-text {
+    width: 350px;
+    height: 35px;
+  }
+
+  .section1 .section1-left .left-text h3{
+    font-size: 20px;
+  }
+
+  .section1 .section1-left img {
+    width: 200px;
+    margin: 30px 0 0 0;
+  }
+
+
+  .section1 .section1-left-btn {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15vw;
+  }
+
+  .section1 .section1-text{
+    display: none;
+  }
+
+  .section1 .section1-right {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .section1 .section1-right .section1-right-img {
+    display: none;
+  }
+
+  .section1 .section1-right .section1-right-img2 {
+    width: 350px;
+    margin-left: 10%;
+    margin-right: 0;
+    margin-top: 25%;
+  }
+
+
+
+  /***************************************offers responsive****************************/
+  /****************************************************************************/
+
+
+  .offers{
+    height: 550px;
+    align-content: center;
+    border-top-right-radius: 150px;
+    padding-top: 0;
+  }
+  .offers .cards{
+    overflow: scroll;
+  }
+
+  .offers h1{
+    font-size: 30px;
+  }
+
+  .offers .cards .offer-card {
+    width: 200px;
+    height: 85%;
+    background-color: #f88521;
+    border-radius: 10px;
+    align-content: center;
+    color: white;
+    margin-right: 15px;
+    transition: 0.3s ease;
+    padding: 20px;
+  }
+
+  .offers .cards .offer-card:hover {
+    width: 220px;
+    height: 280px;
+    margin-right: 5px;
+    box-shadow: 0px 7px 15px rgb(165, 39, 177);
+
+  }
+
+
+  .offers .cards .offer-card .card-title {
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .offers .cards .offer-card .percentage {
+    font-size: 50px;
+    font-weight: bold;
+    color: #f0aa6d;
+    -webkit-text-stroke-color: white;
+  }
+
+  .offers .cards{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+  }
+
+
+  /********************************buy section responsive***********************************/
+  /*****************************************************************************************/
+
+  .buy {
+    width: 100%;
+    height: 1450px;
+    background-color: #bcbcbc;
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
+    border-bottom-left-radius: 70px;
+    text-align: center;
+  }
+
+  .buy h1{
+    font-size: 30px;
+  }
+
+
+  .buy .buy-card {
+    width: 350px;
+    height: 300px;
+    margin-right: 0;
+    border-radius: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .buy .buy-card1{
+    display: block;
+  }
+
+  .buy .buy-card img {
+    width: 60px;
+    margin-left: 42%;
+  }
+
+
+
+  /****************************************destination section responsive****************************************/
+  /*****************************************************************************************/
+
+  .destination {
+    width: 100%;
+    height: 50vh;
+    background-color: #fde6c9;
+    border-top-right-radius: 70px;
+    align-content: center;
+  }
+
+  .destination h1 {
+    font-size: 30px;
+  }
+
+
+
+  /********************************faq section responsive***********************************/
+  /*****************************************************************************************/
+
+
+
+  .faq {
+    width: 100%;
+    height: 2150px;
+    padding: 0;
+    margin: 10px;
+  }
+
+  .faq h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .faq-card {
+    width: 90%;
+    height: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  .faq .faq-card-right {
+    width: 90%;
+    height: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: right;
+    margin-bottom: 50px;
+    margin-left: 10%;
+  }
+
+  .faq-title {
+    font-size: 30px;
+    color: #f88521;
+  }
+
+
+  .faq .view {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #032485;
+    color: #032485;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .faq .view:hover {
+    background-color: #032485;
+    color: white;
+  }
+
+
+
+
+}
