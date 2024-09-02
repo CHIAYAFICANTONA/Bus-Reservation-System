@@ -36,6 +36,11 @@ export class HeaderComponent {
       id: 5,
       link: '#faq',
       title: 'FAQs'
+    },
+    {
+      id: 6,
+      link: '#contactUs',
+      title: 'Contact Us'
     }
   ];
 

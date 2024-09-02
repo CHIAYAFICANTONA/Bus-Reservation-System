@@ -19,11 +19,6 @@ export class FooterComponent {
       title: 'Terms of Service',
       link: 'Terms of Service',
       id: 2
-    },
-    {
-      title: 'Contact Us',
-      link: 'Terms of Service',
-      id: 3
     }
   ];
 
