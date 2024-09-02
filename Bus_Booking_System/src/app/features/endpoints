@@ -1,0 +1,10 @@
+http://localhost:8000/admin/
+http://localhost:8000/bus/
+http://localhost:8000/hotel/
+http://localhost:8000/user/
+http://localhost:8000/payment/
+http://localhost:8000/reservation/
+http://localhost:8000/room/
+http://localhost:8000/seat/
+http://localhost:8000/ticket/
+http://localhost:8000/userroombooking/
