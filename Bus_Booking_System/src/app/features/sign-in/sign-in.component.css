@@ -1,8 +1,89 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-decoration: none;
   font-family: 'maiandra GD';
+}
+
+h2{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.sign-up{
+  width: 50%;
+  height: 500px;
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto;
+  color: white;
+  backdrop-filter: blur(100px);
+  background-color: rgba(000, 000, 000, 0.25);
+}
+
+form{
+  width: 50%;
+  text-align: left;
+  padding: 20px;
+  align-content: center;
+}
+.sign-up img{
+  width: 90px;
+}
+
+label{
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+input{
+  width: 250px;
+  height: 27px;
+  border-bottom: 1px solid white;
+  margin: 5px 0 20px 0;
+  padding-left: 15px;
+  background-color: transparent;
+}
+
+input::placeholder{
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+p{
+  margin: auto;
+  font-size: 13px;
+}
+
+a{
+  color: purple;
+}
+
+.up-btn{
+  background-color: #032485;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.sign-up-info{
+  text-align: center;
+  margin: 10px 0 30px 0;
+}
+
+.sign-up-img{
+  align-content: center;
+  width: 50%;
+  background-color: #032485;
+  padding-left: 20px;
+}
+
+.sign-up-img img{
+  width: 300px;
 }
