@@ -4,4 +4,4 @@ async function includeHTML(elementId, file) {
   document.getElementById(elementId).innerHTML = htmlContent;
 }
 
-includeHTML('landingPage','/pages/landingPage');
+IncludeHTML('sectionOne','/pages/sectionOne.html');

@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background-color: #000000;
+  background-color: #2b2e2b;
 }
 
 .wrapper {
@@ -126,7 +126,7 @@ body {
   left: 0;
   width: 100%;
   height: 300%;
-  background: linear-gradient(#081b29,#ADD8E6,#081b29,#ADD8E6);
+  background: linear-gradient(#081b29,#58536E,#081b29,#58536E);
   z-index: -1;
   transition: -5s;
 }

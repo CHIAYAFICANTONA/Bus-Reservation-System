@@ -1,0 +1,26 @@
+<section style="background-image: url(Simple%20Shiny.svg); background-repeat: repeat" class="sign-in flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100">
+  <div class="sign-up">
+    <form action="">
+      <img src="krome_logo.png" alt="">
+      <div class="sign-up-info">
+        <h2>Create your account</h2>
+        <p>Let's start our new venture</p>
+      </div>
+
+      <label for="name">name <br>
+        <input type="text" placeholder="Enter your name">
+      </label> <br>
+      <label for="mail">Email <br>
+        <input type="email" name="mail" id="email" placeholder="Enter your email">
+      </label><br>
+      <label for="password">password <br>
+        <input type="password" name="password" placeholder="Enter your password" id="password"><br>
+      </label>
+      <input type="submit" value="Sign Up" class="up-btn">
+      <p>Already have an account? <a routerLink="/signIn" class="hover:underline">Log in</a></p>
+    </form>
+    <div class="sign-up-img">
+      <img src="login.png" alt="">
+    </div>
+  </div>
+</section>
