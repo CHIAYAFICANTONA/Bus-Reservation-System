@@ -1,7 +1,0 @@
-{
-  "name": "Bus_Booking_System-MobileEnd",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
