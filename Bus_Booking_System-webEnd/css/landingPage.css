@@ -1,0 +1,1139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'maiandra GD';
+}
+
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-page {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: #032485;
+    align-items: center;
+}
+
+.nav .logo img {
+    width: 100px;
+}
+
+.nav .navbar {
+    padding-top: 20px;
+}
+
+.nav .navbar ul {
+    display: flex;
+}
+
+.nav .navbar ul li a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: white;
+    padding: 7px 10px;
+    transition: 0.3s;
+}
+
+.nav .navbar ul li a:hover {
+    border-bottom: 1px solid white;
+    color: white;
+    transition: 0.6s ease;
+
+}
+
+.nav .navbar ul li #home {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.user-login {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#counter {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+#counter option {
+    color: black;
+
+}
+
+.login {
+    display: flex;
+    height: 35px;
+}
+
+.user-login2 {
+    display: none;
+    height: 35px;
+    justify-content: space-between;
+}
+
+.login .signup {
+    padding: 5px 15px;
+    border-radius: 50px;
+    color: #032485;
+    background-color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+.login2 .signup {
+    padding: 5px 15px;
+    border-radius: 50px;
+    color: #032485;
+    background-color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+
+.login .signin {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-right: 15px;
+    text-decoration: none;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+
+.login2 .signin {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-right: 15px;
+    text-decoration: none;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+.login .signup:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+.login2 .signup:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+.login .signin:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+.login2 .signin:hover {
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+
+.profile {
+    width: 50px;
+    height: 50px;
+    background-color: azure;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.profile img {
+    width: 50px;
+}
+
+.burger {
+    display: none;
+    z-index: 7;
+}
+
+.burger .burger-bar1 {
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.burger .burger-bar2 {
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 7px;
+}
+
+.burger .burger-bar3 {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 7px;
+}
+
+
+/****************************************section1****************************************/
+/*****************************************************************************************/
+
+.section1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: url(../img/background1.png);
+    border-bottom-left-radius: 40%;
+    background-color: #00ffff;
+}
+
+.section1-1 {
+    background-color: #fde6c9;
+}
+
+.section1 .section1-left {
+    width: 50%;
+    padding: 50px 0 0 50px;
+}
+
+.section1 .section1-right {
+    width: 50%;
+}
+
+.section1 .section1-right .section1-right-img {
+    width: 250px;
+    margin: 50px 0 0 300px;
+}
+
+#myImage{
+    position: absolute;
+    transform: translate(-10%, -10%);
+    transition: all 2s ease-in-out;
+    margin-left: 70%;
+    margin-top: 10%;
+}
+
+.section1 .section1-right .section1-right-img2 {
+    width: 500px;
+    margin-right: 100px;
+}
+
+
+/****************************************section1 left****************************************/
+.section1 .section1-left h1 {
+    font-weight: bold;
+    color: #032485;
+    font-size: 70px;
+}
+
+.section1 .section1-left .left-text {
+    width: 470px;
+    height: 50px;
+    background: #f88521;
+    padding-left: 10px;
+    border-radius: 10px;
+    align-content: center;
+    box-shadow: 0 0 15px #f88521;
+}
+
+.section1 .section1-left h3 {
+    color: white;
+}
+
+.section1 .section1-text {
+    color: grey;
+}
+
+.section1 .section1-left img {
+    width: 300px;
+    margin: 30px 0 0 0;
+}
+
+.section1 .section1-left-btn {
+    display: flex;
+    margin: 30px 0 0 10px;
+}
+
+.section1 .section1-left-btn1 {
+    padding: 7px 15px;
+    background-color: #032485;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+
+.section1 .section1-left-btn1:hover {
+    box-shadow: 0 0 15px #032485;
+}
+
+
+
+
+
+/****************************************offers section****************************************/
+/*****************************************************************************************/
+
+.offers {
+    width: 100%;
+    height: 550px;
+    background-color: #fde6c9;
+    text-align: center;
+    border-top-right-radius: 50%;
+    padding-top: 50px;
+}
+
+.offers-1 {
+    background-color: aqua;
+}
+
+.offers h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.offers .cards {
+    display: flex;
+    margin-top: 90px;
+    width: 100%;
+    justify-content: center;
+}
+
+.offers .cards .offer-card {
+    width: 200px;
+    height: 250px;
+    background-color: #f88521;
+    border-radius: 10px;
+    align-content: center;
+    color: white;
+    margin-right: 15px;
+    transition: 0.3s ease;
+}
+
+.offers .cards .offer-card:hover {
+    width: 210px;
+    height: 260px;
+    margin-right: 5px;
+    box-shadow: 0px 7px 15px rgb(165, 39, 177);
+
+}
+
+
+.offers .cards .offer-card .card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.offers .cards .offer-card .percentage {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f0aa6d;
+    -webkit-text-stroke-color: white;
+}
+
+.offers .view {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #032485;
+    color: #032485;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0 0;
+    transition: 0, 2 ease;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.offers .view:hover {
+    background-color: #032485;
+    color: white;
+}
+
+/****************************************buy section****************************************/
+/*****************************************************************************************/
+.buy {
+    width: 100%;
+    height: 130vh;
+    background-color: #bcbcbc;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.buy-1 {
+    background-color: #fde6c9;
+}
+
+.buy h1 {
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.buy .buy-card {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    align-content: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.buy .buy-card img {
+    width: 100px;
+}
+
+.buy .buy-card .buy-step {
+    font-weight: bold;
+}
+
+.buy-card1 {
+
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.buy .buy-btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #032485;
+    color: white;
+    align-content: center;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.buy .buy-btn:hover {
+    box-shadow: 0 0 20px #032485;
+    width: 205px;
+    height: 45px;
+}
+
+
+/****************************************destination section****************************************/
+/*****************************************************************************************/
+.destination-1 {
+    background-color: #bcbcbc;
+}
+
+.destination {
+    width: 100%;
+    height: 100vh;
+    background-color: #fde6c9;
+    border-top-right-radius: 20%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.destination h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.destination .destination-card {
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 5px black;
+    margin-right: 25px;
+}
+
+.destination .destination-card .card-image {
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.destination .destination-card .card-image img {
+    width: 250px;
+}
+
+.destination .destination-card .card-text {
+    display: flex;
+    width: 250px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.go {
+    width: 50px;
+    height: 30px;
+    background-color: #032485;
+    color: white;
+    border-radius: 50px;
+    align-content: center;
+    cursor: pointer;
+}
+
+.go:hover {
+    box-shadow: 0 0 20px #032485;
+}
+
+.dest-card {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.destination-card .dest-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.carousel {
+    width: 500px;
+    height: 400px;
+}
+
+
+
+/****************************************FAQ section****************************************/
+/*****************************************************************************************/
+
+.faq {
+    width: 100%;
+    height: 250vh;
+    border-top: 5px solid #f0aa6d;
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.faq h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.faq-card {
+    width: 650px;
+    height: 200px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.faq .faq-card-right {
+    width: 650px;
+    height: 200px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: right;
+    margin-bottom: 50px;
+    margin-left: 43%;
+}
+
+.faq-title {
+    font-size: 30px;
+    color: #f88521;
+}
+
+
+.faq .view {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #032485;
+    color: #032485;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.faq .view:hover {
+    background-color: #032485;
+    color: white;
+    transition: 0.5 ease;
+}
+
+
+
+
+/****************************************footer section****************************************/
+/*****************************************************************************************/
+
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #474747;
+    border-top: 5px solid gray;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+footer .foot {
+    display: flex;
+}
+
+footer .foot a {
+    text-decoration: none;
+    color: #bcbcbc;
+}
+
+footer .foot-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/***************************************login section****************************/
+/****************************************************************************/
+
+.log{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(000, 000, 000, 0.50);
+    align-content: center;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    right: -100%;
+}
+
+.log .log-container{
+    width: 70%;
+    height: 70vh;
+    align-content: center;
+    display: flex;
+    overflow: hidden;
+    margin: auto;
+}
+
+.log .formuler{
+    backdrop-filter: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: -20% 0 10% 20%;
+    color: white;
+    transition: 0.7s ease-in-out;
+    position: absolute;
+    bottom: 0;
+}
+
+.log .formuler input{
+    width: 350px;
+    height: 40px;
+    margin: auto;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+
+}
+
+.log .formuler input::placeholder{
+    color: white;
+}
+
+.log .formuler input:focus{
+    outline: none;
+}
+
+
+.log .formuler .login-title{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.log .formuler .submit{
+    background-color: #032485;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+
+.log .formuler .login-text {
+    color: purple;
+    cursor: pointer;
+}
+
+.log .formuler .login-text2{
+    font-weight: lighter;
+}
+
+.log .log-container .log-cross{
+    width: 50px;
+    position: absolute;
+    right: 10%;
+    top: 5%;
+}
+
+.user-logo{
+    width: 20px;
+}
+
+/***************************************sign up 02****************************/
+.log .formuler2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin: auto;
+    transition: 0.7s ease-in-out;
+    position: absolute;
+    top: -100%;
+    margin: -20% 0 0 20%;
+}
+
+.log .formuler2 input{
+    width: 350px;
+    height: 40px;
+    margin: auto;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+
+}
+
+.log .formuler2 input::placeholder{
+    color: white;
+}
+
+.log .formuler2 input:focus{
+    outline: none;
+}
+
+
+.log .formuler2 .login-title{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.log .formuler2 .submit{
+    background-color: #032485;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+
+.log .formuler2 .login-text3{
+    color: purple;
+    cursor: pointer;
+}
+
+.log .formuler2 .login-text2{
+    font-weight: lighter;
+}
+
+
+/***************************************make the log te appear****************************/
+.sign-Up-account .formuler{
+    transition: 0.5s ease-in-out;
+    bottom: -100%;
+}
+
+.sign-Up-account .formuler2{
+    top: 50%;
+    transition: 0.5s ease-in-out;
+    margin: -20% 0 0 20%;
+}
+
+
+.active-signin .log{
+    right: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+.active-signin{
+    overflow: hidden;
+}
+
+
+
+
+/***************************************Responsive****************************/
+/****************************************************************************/
+
+
+/***************************************header responsive****************************/
+/****************************************************************************/
+
+@media screen and (max-width: 900px) {
+    .nav .navbar {
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        background-color: #032485;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+        top: -100%;
+        transition: 0.5s ease;
+    
+    }
+
+    .active .navbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    .active .burger {
+        position: fixed;
+    }
+
+
+
+    .nav .navbar ul {
+        display: block;
+    }
+
+    .nav .navbar ul li {
+        margin-bottom: 25px;
+    }
+
+    .user-login,
+    .profile {
+        display: none;
+    }
+
+    .home-page {
+        padding: 0 25px;
+    }
+
+    .nav .logo img {
+        width: 100px;
+    }
+
+
+    .burger {
+        display: block;
+    }
+
+
+    body{
+        overflow-x: hidden;
+    }
+    .active-signin{
+        overflow: hidden;
+    }
+
+q   qqqq    
+    
+
+
+
+
+    /***************************************section1 responsive****************************/
+    /****************************************************************************/
+    .section1 {
+        display: block;
+        height: 850px;
+        border-bottom-left-radius: 150px;
+    }
+
+    .section1 .section1-left {
+        padding: 40px 0 0 20px;
+    }
+
+    .user-login2{
+        display: flex;
+        justify-content: right;
+    }
+
+
+    .login2 {
+        display: flex;
+        }
+
+    
+    .section1 .section1-left h1 {
+            font-size: 50px;
+        }
+
+
+    .section1 .section1-left .left-text {
+            width: 350px;
+            height: 35px;
+    }
+
+    .section1 .section1-left .left-text h3{
+        font-size: 20px;
+    }
+
+    .section1 .section1-left img {
+        width: 200px;
+        margin: 30px 0 0 0;
+    }
+
+
+    .section1 .section1-left-btn {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .section1 .section1-right {
+        width: 100%;
+        padding-top: 0;
+    }
+    
+    .section1 .section1-right .section1-right-img {
+        display: none;
+    }
+    
+    .section1 .section1-right .section1-right-img2 {
+        width: 350px;
+        margin-left: 70px;
+        margin-right: 0;
+    }
+
+
+    
+    /***************************************offers responsive****************************/
+    /****************************************************************************/
+
+
+    .offers{
+        height: 550px;
+        align-content: center;
+        border-top-right-radius: 150px;
+        padding-top: 0;
+    }
+    .offers .cards{
+        overflow: scroll;
+    }
+
+    .offers h1{
+        font-size: 30px;
+    }
+    
+.offers .cards .offer-card {
+    width: 200px;
+    height: 85%;
+    background-color: #f88521;
+    border-radius: 10px;
+    align-content: center;
+    color: white;
+    margin-right: 15px;
+    transition: 0.3s ease;
+    padding: 20px;
+}
+
+.offers .cards .offer-card:hover {
+    width: 220px;
+    height: 280px;
+    margin-right: 5px;
+    box-shadow: 0px 7px 15px rgb(165, 39, 177);
+
+}
+
+
+.offers .cards .offer-card .card-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.offers .cards .offer-card .percentage {
+    font-size: 50px;
+    font-weight: bold;
+    color: #f0aa6d;
+    -webkit-text-stroke-color: white;
+}
+
+.offers .cards{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+}
+
+
+/********************************buy section responsive***********************************/
+/*****************************************************************************************/
+
+.buy {
+    width: 100%;
+    height: 1450px;
+    background-color: #bcbcbc;
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
+    border-bottom-left-radius: 70px;
+    text-align: center;
+}
+
+.buy h1{
+    font-size: 30px;
+}
+
+
+.buy .buy-card {
+    width: 350px;
+    height: 300px;
+    margin-right: 0;
+    border-radius: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.buy .buy-card1{
+    display: block;
+}
+
+.buy .buy-card img {
+    width: 60px;
+}
+
+
+
+/****************************************buy section responsive****************************************/
+/*****************************************************************************************/
+
+.destination {
+    width: 100%;
+    height: 50vh;
+    background-color: #fde6c9;
+    border-top-right-radius: 70px;
+    align-content: center;
+}
+
+.destination h1 {
+    font-size: 30px;
+}
+
+
+
+/********************************faq section responsive***********************************/
+/*****************************************************************************************/
+
+
+
+.faq {
+    width: 100%;
+    height: 2300px;
+    padding: 0;
+}
+
+.faq h1 {
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.faq-card {
+    width: 90%;
+    height: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.faq .faq-card-right {
+    width: 90%;
+    height: 300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #032485;
+    align-content: center;
+    padding: 15px;
+    color: white;
+    text-align: right;
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+
+.faq-title {
+    font-size: 30px;
+    color: #f88521;
+}
+
+
+.faq .view {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #032485;
+    color: #032485;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.faq .view:hover {
+    background-color: #032485;
+    color: white;
+    transition: 0.5 ease;
+}
+
+
+
+
+}
