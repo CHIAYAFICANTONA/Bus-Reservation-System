@@ -14,12 +14,10 @@ import {FormsModule} from "@angular/forms";
 
 
 export class UserManagementComponent {
-
   public users: User[] = [
     {id: 1, name: 'John Doe', email: 'john@example.com', avatarUrl: 'https://via.placeholder.com/150'},
     {id: 2, name: 'Jane Smith', email: 'jane@example.com', avatarUrl: 'https://via.placeholder.com/150'},
   ];
-
   public filteredUsers: User[] = [...this.users];
   public searchTerm: string = '';
   public sortColumn: string = '';

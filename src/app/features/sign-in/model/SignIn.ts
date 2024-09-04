@@ -1,4 +1,4 @@
-interface SignIn {
+export interface SignIn {
   firstName: string;
   lastName: string;
   password: string
