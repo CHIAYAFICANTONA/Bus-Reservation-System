@@ -1,0 +1,100 @@
+<div class="container mx-auto p-4 bg-gray-100 rounded-lg shadow-md">
+  <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">User Management</h2>
+  <div class="flex justify-between items-center mb-4">
+    <input
+      type="text"
+      placeholder="Search users..."
+      class="border border-gray-300 rounded-lg p-2 w-full max-w-md"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+    <button (click)="addUser()" class="ml-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+      Add User
+    </button>
+  </div>
+
+  <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+    <thead>
+    <tr class="bg-gray-200">
+      <th class="py-2 px-4 border-b">
+        <input type="checkbox" (change)="toggleSelectAll($event)"/>
+      </th>
+      <th class="py-2 px-4 border-b">Avatar</th>
+      <th class="py-2 px-4 border-b cursor-pointer" (click)="sortTable('id')">
+        ID
+        @if (sortColumn === 'id') {
+          <span class="ml-1">{{ sortDirection === 'asc' ? '▲' : '▼' }}</span>
+        }
+      </th>
+      <th class="py-2 px-4 border-b cursor-pointer" (click)="sortTable('name')">
+        Name
+        @if (sortColumn === 'name') {
+          <span class="ml-1">{{ sortDirection === 'asc' ? '▲' : '▼' }}</span>
+        }
+      </th>
+      <th class="py-2 px-4 border-b cursor-pointer" (click)="sortTable('email')">
+        Email
+        @if (sortColumn === 'email') {
+          <span class="ml-1">{{ sortDirection === 'asc' ? '▲' : '▼' }}</span>
+        }
+      </th>
+      <th class="py-2 px-4 border-b">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user) {
+        <tr>
+          <td class="py-2 px-4 border-b">
+            <input type="checkbox" [(ngModel)]="user.selected"/>
+          </td>
+          <td class="py-2 px-4 border-b">
+            <img [src]="user.avatarUrl" alt="{{ user.name }}" class="w-10 h-10 rounded-full"/>
+          </td>
+          <td class="py-2 px-4 border-b">{{ user.id }}</td>
+          <td class="py-2 px-4 border-b">{{ user.name }}</td>
+          <td class="py-2 px-4 border-b">{{ user.email }}</td>
+          <td class="py-2 px-4 border-b">
+            <button (click)="viewUser(user)" class="text-blue-500 hover:text-blue-700">View</button>
+            <button (click)="editUser(user)" class="text-green-500 hover:text-green-700 ml-2">Edit</button>
+            <button (click)="deleteUser(user)" class="text-red-500 hover:text-red-700 ml-2">Delete</button>
+          </td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+
+  <div class="flex justify-between items-center mt-4">
+    <div>
+      <button (click)="deleteSelectedUsers()" class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
+        Delete Selected
+      </button>
+    </div>
+
+    <div class="flex space-x-2">
+      <button (click)="prevPage()" [disabled]="currentPage === 1"
+              class="py-2 px-4 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:opacity-50">
+        Previous
+      </button>
+      <span class="py-2">{{ currentPage }} / {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages"
+              class="py-2 px-4 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:opacity-50">
+        Next
+      </button>
+    </div>
+  </div>
+
+  @if (showModal) {
+    <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg p-6 max-w-lg w-full">
+        <h3 class="text-2xl font-bold mb-4">{{ modalTitle }}</h3>
+        @if (modalAction !== 'view') {
+          <form (submit)="submitModalForm()">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Save</button>
+          </form>
+        }
+        <button (click)="closeModal()" class="text-gray-500 hover:text-gray-700 mt-4">Close</button>
+      </div>
+    </div>
+  }
+</div>
