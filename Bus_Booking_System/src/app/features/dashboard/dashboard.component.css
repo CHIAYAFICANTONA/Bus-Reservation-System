@@ -1,0 +1,55 @@
+:root{
+  --lightBlue: #0233c0;
+  --darkBlue: #032485;
+  --white: #ffffff;
+  --shadow: #0000001a;
+  --grey: #f1f1f1;
+  --yellow: #FFB27D;
+  --backgroundColor: #ECECEC;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Maiandra GD';
+}
+
+.search-container {
+  width: 60%;
+}
+
+input[type=text] {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--lightBlue);
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+input[type=text]:focus {
+  border: 2px solid var(--darkBlue);
+  outline: none;
+}
+
+.rightNavBar {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  position: relative;
+}
+
+.icon i {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}

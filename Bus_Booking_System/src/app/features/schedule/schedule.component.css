@@ -1,0 +1,118 @@
+.section{
+  box-sizing: border-box;
+  font-family: "maiandra GD";
+}
+
+.section1{
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.logo{
+  display: flex;
+  margin: auto;
+}
+
+.logo img{
+  width: 100px;
+}
+
+.card1{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.section2{
+  width: 100%;
+  padding: 20px 17%;
+  box-sizing: border-box;
+  font-family: "maiandra GD";
+  background-color: #e4e2e2;
+}
+
+.bus-card{
+  width: 100%;
+  border: 1px solid #ebebeb;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.card1 p{
+  color: grey;
+}
+
+.continue1{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.continue{
+  padding: 7px 15px;
+  background-color:  #032485;
+  border-radius: 8px;
+  color: white;
+  align-content: center;
+  display: flex;
+}
+
+.price{
+  font-size: 25px;
+}
+
+.bus{
+  width: 100%;
+  padding: 0 17%;
+  box-sizing: border-box;
+}
+
+.bus .bus-type{
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.type1{
+  padding: 7px 15px;
+  border-bottom: 3px solid #032485;
+}
+
+b{
+  font-size: 18px;
+}
+
+.bus-info{
+  display: flex;
+  align-content: center;
+}
+
+.foot{
+  align-content: center;
+  color: gray;
+  margin-right: 25px;
+  display: none;
+  transition: 0.3s ease;
+}
+
+.active .foot{
+  display: block;
+}
+
+.active .type1{
+  border-bottom: none;
+}
+
+.active .type{
+  padding: 7px 15px;
+  border-bottom: 3px solid #032485;
+}
