@@ -6,6 +6,8 @@ route.get( '/', ti_controller.getTicket);
 
 route.post('/', ti_controller.saveTicket);
 
+route.post('/', ti_controller.verifyTicket)
+
 route.put('/', ti_controller.updateTicket);
 
 route.delete('/:id', ti_controller.deleteTicket);
