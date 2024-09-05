@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2024 at 08:45 AM
+-- Generation Time: Sep 05, 2024 at 10:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -148,9 +148,12 @@ CREATE TABLE `seat` (
 
 CREATE TABLE `ticket` (
   `id` int(50) NOT NULL,
+  `ticketId` varchar(50) NOT NULL,
+  `ticketQRCode` varchar(50) NOT NULL,
   `reservationId` int(11) NOT NULL,
   `issueDate` date NOT NULL,
-  `price` double NOT NULL
+  `price` double NOT NULL,
+  `isUsed` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -174,12 +177,21 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phoneNumber` int(20) DEFAULT NULL,
+  `phoneNumber` varchar(20) DEFAULT NULL,
   `password` varchar(50) NOT NULL,
   `image` blob NOT NULL,
   `createdOn` datetime NOT NULL DEFAULT current_timestamp(),
   `roleId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `phoneNumber`, `password`, `image`, `createdOn`, `roleId`) VALUES
+(1, 'user', 'user@gmail.com', '123456789', 'user12345', '', '2024-09-04 16:45:13', 3),
+(2, 'user.', 'user.@gmail.com', '123456789', 'user.12345', '', '2024-09-04 16:45:52', 3),
+(3, 'user..', 'user..@gmail.com', '123456789', 'user..12345', '', '2024-09-04 16:48:01', 3);
 
 --
 -- Indexes for dumped tables
@@ -247,6 +259,7 @@ ALTER TABLE `seat`
 --
 ALTER TABLE `ticket`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ticketId` (`ticketId`,`ticketQRCode`),
   ADD KEY `reservationId` (`reservationId`);
 
 --
@@ -320,7 +333,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
