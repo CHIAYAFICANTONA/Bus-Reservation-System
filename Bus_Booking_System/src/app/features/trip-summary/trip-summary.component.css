@@ -3,6 +3,7 @@ section{
     font-family: "maiandra GD";
     height: 110vh;
     align-items: center;
+    color: white;
 }
 
 nav{
@@ -24,7 +25,8 @@ nav{
  .section1{
     width: 40%;
     height: 650px;
-    background-color: rgb(230, 227, 223);
+    backdrop-filter: blur(60px);
+    background-color: rgba(000, 000, 000, 0.25);
     margin: auto;
     text-align: center;
     align-content: center;
@@ -38,7 +40,7 @@ nav{
    width: 80%;
    height: 40px;
    padding: 10px;
-   border: 1px solid black;
+   border: 1px solid white;
    align-items: center;
    border-radius: 10px;
    margin: auto;
