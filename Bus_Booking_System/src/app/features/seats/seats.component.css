@@ -1,7 +1,7 @@
 .seat-map-container {
   box-sizing: border-box;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   padding: 20px;
   font-family: "maiandra GD";
   background-repeat: repeat;
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-between;
   background-color: white;
-  width: 600px;
+  width: 700px;
   padding: 10px 10px;
   border-radius: 5px;
   margin-top: 50px;
@@ -86,4 +86,17 @@
 h1{
   color: white;
   text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.continue{
+  padding: 7px 17px;
+  background-color: blue;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
 }

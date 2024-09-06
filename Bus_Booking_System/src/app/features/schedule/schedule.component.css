@@ -10,13 +10,31 @@
   box-sizing: border-box;
 }
 
+h1{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.section1 p{
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 .logo{
+  width: 100%;
+  text-align: center;
   display: flex;
-  margin: auto;
+  justify-content: center;
+  height: 100px;
+  background-color: #032485;
+  align-items: center;
+  color: white;
 }
 
 .logo img{
-  width: 100px;
+  width: 80px;
+  margin-left: 20px;
 }
 
 .card1{

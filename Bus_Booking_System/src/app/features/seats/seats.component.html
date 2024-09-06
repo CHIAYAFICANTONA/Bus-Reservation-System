@@ -178,55 +178,62 @@
       <div class="row1">
         <div class="seat available" data-seat="seat n°09">09</div>
         <div class="seat available" data-seat="seat n°08">08</div>
+      </div>
+      <div class="row1">
+        <div class="seat available" data-seat="seat n°07">07</div>
+        <div class="seat available" data-seat="seat n°06">06</div>
+      </div>
     </div>
-    <div class="row1">
-      <div class="seat available" data-seat="seat n°07">07</div>
-      <div class="seat available" data-seat="seat n°06">06</div>
+
+
+    <div class="row">
+      <div class="row1">
+        <div class="seat occupied" data-seat="seat n°05">05</div>
+        <div class="seat available" data-seat="seat n°04">04</div>
+      </div>
+      <div class="row1">
+        <div class="seat available" data-seat="seat n°03">03</div>
+        <div class="seat available" data-seat="seat n°02">02</div>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="row1">
+        <div class="seat occupied" data-seat="dRIVER">Driver</div>
+
+      </div>
+      <div class="row1">
+        <div class="seat occupied" data-seat="seat n°01">01</div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- More rows here -->
   </div>
 
 
-  <div class="row">
-    <div class="row1">
-      <div class="seat occupied" data-seat="seat n°05">05</div>
-      <div class="seat available" data-seat="seat n°04">04</div>
+  <div class="seat-summary">
+    <div class="seat-selected">
+      <h4>Selected Seats</h4>
+      <ul id="selected-seats">
+        <!-- Selected seats will appear here -->
+      </ul>
     </div>
-    <div class="row1">
-      <div class="seat available" data-seat="seat n°03">03</div>
-      <div class="seat available" data-seat="seat n°02">02</div>
+    <div class="p">
+      <p>Total Price: <b><span id="total-price">00XAF</span></b> </p>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="row1">
-      <div class="seat occupied" data-seat="dRIVER">Driver</div>
-
+    <div class="p">
+      <p>Total Seats: <b><span id="total-seats">Seat(s)</span></b> </p>
     </div>
-    <div class="row1">
-      <div class="seat occupied" data-seat="seat n°01">01</div>
-    </div>
+
+    <a routerLink ="/trip-summary"> <div class="continue">
+      continue
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+          
+    </div></a>
   </div>
 
-
-
-
-
-  <!-- More rows here -->
-</div>
-
-
-<div class="seat-summary">
-  <div class="seat-selected">
-    <h4>Selected Seats</h4>
-    <ul id="selected-seats">
-      <!-- Selected seats will appear here -->
-    </ul>
-  </div>
-  <div class="p">
-    <p>Total Price: <b><span id="total-price">00XAF</span></b> </p>
-  </div>
-  <div class="p">
-    <p>Total Seats: <b><span id="total-seats">Seat(s)</span></b> </p>
-  </div>
-</div>
 </div>
