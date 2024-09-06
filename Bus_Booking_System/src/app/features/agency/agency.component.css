@@ -74,8 +74,8 @@
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #032485;
+  border-radius: 10px;
 }
 .btn-primary:hover {
   color: #fff;
@@ -84,8 +84,8 @@
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: #032485;
+  border-color: #032485;
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 
