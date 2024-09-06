@@ -8,6 +8,8 @@ import {ScheduleComponent} from "./features/schedule/schedule.component";
 import {SeatsComponent} from "./features/seats/seats.component";
 import {PaymentComponent} from "./features/payment/payment.component";
 import {TripSummaryComponent} from "./features/trip-summary/trip-summary.component";
+import {PayComponent} from "./features/pay/pay.component";
+import {TicketComponent} from "./features/ticket/ticket.component";
 
 
 export const routes: Routes = [
@@ -20,5 +22,7 @@ export const routes: Routes = [
   {path: 'seats', component: SeatsComponent, title: 'Seats',},
   {path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.routes').then(m => m.dashboardRoutes)},
   {path: 'payment', component: PaymentComponent, title: 'payment',},
-  {path: 'trip-summary', component: TripSummaryComponent, title: 'trip-summary',}
+  {path: 'trip-summary', component: TripSummaryComponent, title: 'trip-summary',},
+  {path: 'pay', component: PayComponent, title: 'pay',},
+  {path: 'ticket', component: TicketComponent, title: 'ticket',}
 ];
