@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-between;
   background-color: white;
-  width: 700px;
+  width: 600px;
   padding: 10px 10px;
   border-radius: 5px;
   margin-top: 50px;
@@ -99,4 +99,18 @@ h1{
   align-items: center;
   color: white;
   cursor: pointer;
+}
+
+.door{
+  width: 50px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 5px;
+  cursor: not-allowed;
+  transition: background-color 0.3s;
+  margin-bottom: 5px;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+  color: white;
 }
