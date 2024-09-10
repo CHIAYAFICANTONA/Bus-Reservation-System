@@ -3,6 +3,8 @@ const QRCode = require('qrcode')
 const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
+const nodemailer = require('nodemailer');
+const PDFDocument = require('pdfkit');
 
 const privateKey = fs.readFileSync('private.pem', 'utf8');
 const publicKey = fs.readFileSync('public.pem', 'utf8');
@@ -38,9 +40,9 @@ exports.saveTicket = async(req, res) => {
         return uuidv4(); // Generates a unique ID like 'e2c7d718-6e89-4d7e-b2d2-4d2e2e2e2e2e'
       };
 
-      const generateQRCode = async (ticketId) => {
+      const generateQRCode = async (ticketData) => {
         try {
-          const qrCodeDataURL = await QRCode.toDataURL(ticketId); // Generates a Data URL for the QR code
+          const qrCodeDataURL = await QRCode.toDataURL(ticketData); // Generates a Data URL for the QR code
           return qrCodeDataURL; // This URL can be sent to the frontend to be displayed as an image
         } catch (err) {
           console.error('Error generating QR code', err);
@@ -55,10 +57,77 @@ exports.saveTicket = async(req, res) => {
         return token;
       };
 
+      const tripData = dbconnection.query(
+        "SELECT u.name AS passengerName, u.email AS email, b.licensePlate AS licensePlate, b.departure AS departure, b.destination AS destination, b.departureDateTime AS departureDateTime, s.seatNumber AS seatNumber FROM ticket t LEFT JOIN reservation r ON t.reservationId = r.id LEFT JOIN users u ON r.userId = u.id LEFT JOIN bus b ON r.busId = b.id LEFT JOIN seat s ON r.seatId = s.id"
+      )
+
+       // Email transporter setup using Gmail (can use other SMTP providers)
+ const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+      user: 'anjohsamueljr@gmail.com',
+      pass: 'Python2711.',
+  },
+});
+
+// Generate the e-ticket as a PDF and send it via email
+const generateETicket = async (tripData, qrCodeDataURL, res) => {
+  const doc = new PDFDocument();
+  const pdfPath = `etickets/${tripData.passengerName}_ticket.pdf`;
+
+  // Pipe PDF to a file
+  doc.pipe(fs.createWriteStream(pdfPath));
+
+  // Add content to the PDF
+  doc.fontSize(25).text('Your eTicket', { align: 'center' });
+  doc.fontSize(16).text(`Passenger Name: ${tripData.passengerName}`, 100, 100);
+  doc.text(`From: ${tripData.departure}`);
+  doc.text(`To: ${tripData.destination}`);
+  doc.text(`Trip Date-Time: ${tripData.departureDateTime}`);
+  doc.text(`Seat Number: ${tripData.seatNumber}`);
+  doc.text(`Bus License Plate: ${tripData.licensePlate}`);
+
+  // Add QR code image to the PDF
+  doc.image(Buffer.from(qrCodeDataURL.split(',')[1], 'base64'), {
+      fit: [150, 150],
+      align: 'center',
+      valign: 'center',
+  });
+
+  doc.end();
+
+  // Once the PDF is created, send it via email
+  doc.on('finish', () => {
+      const mailOptions = {
+          from: 'anjohsamueljr@gmail.com',
+          to: tripData.email,
+          subject: 'Your eTicket from Krome Booking',
+          text: 'Attached is your eTicket. Please present it at boarding.',
+          attachments: [
+              {
+                  filename: `${tripData.passengerName}_ticket.pdf`,
+                  path: pdfPath,
+              },
+          ],
+      };
+
+      transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+              console.error('Error sending email:', err);
+              res.status(500).send('Error sending eTicket');
+          } else {
+              console.log('Email sent:', info.response);
+              res.status(200).send('eTicket sent successfully');
+          }
+      });
+  });
+};
+
+
       const ticketId = generateTicketId();
       const ticketData = {ticketId: ticketId, reservationId: reservationId};
-      const ticketIdSigned = generateSignedTicket(ticketData)
-      const ticketQRCode = await generateQRCode(ticketIdSigned);
+      const ticketDataSigned = generateSignedTicket(ticketData)
+      const ticketQRCode = await generateQRCode(ticketDataSigned);
 
         const control_reservationId = await dbconnection.query(
             'SELECT * FROM reservation WHERE id = ?', [reservationId]
@@ -79,6 +148,8 @@ exports.saveTicket = async(req, res) => {
                 data: ticket,
                 message: 'Successfully Saved Ticket'
             });
+
+            generateETicket(tripData, ticketQRCode)
         };
     } catch (error) {
         res.status(500).send({

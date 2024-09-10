@@ -3,7 +3,7 @@ const dbconnection = require('../database');
 exports.getSeat = async(req, res) => {
     try {
         const seat = await dbconnection.query(
-            'SELECT b.licencePlate AS bus, isAvailable FROM seat s LEFT JOIN bus b ON s.busId = b.id'
+            'SELECT b.licencePlate AS bus, seatNumber, isAvailable, price FROM seat s LEFT JOIN bus b ON s.busId = b.id'
         );
         res.status(200).send({
             success: true,
@@ -23,7 +23,9 @@ exports.saveSeat = async(req, res) => {
     try {
         let {
             busId,
-            isAvailable
+            isAvailable,
+            seatNumber,
+            price
         } = req.body;
         const control_busId = await dbconnection.query(
             'SELECT * FROM bus WHERE id = ?', [busId]
@@ -37,8 +39,8 @@ exports.saveSeat = async(req, res) => {
             })
         }else{
             const seat = await dbconnection.query(
-                'INSERT INTO seat(busId, isAvailable) VALUES(?, ?)',
-                [busId, isAvailable]);
+                'INSERT INTO seat(busId, isAvailable, seatNumber, price) VALUES(?, ?, ?, ?)',
+                [busId, isAvailable, seatNumber, price]);
             res.status(201).send({
                 success: true,
                 data: seat,
@@ -58,12 +60,13 @@ exports.updateSeat = async(req, res) => {
     try {
         let {
             busId,
-            isAvailable
+            isAvailable,
+            seatNumber
         } = req.body;
         let id = req.query.id;
         const seat = await dbconnection.query(
-            'UPDATE seat SET busId = ?, isAvailable = ? WHERE id= ?',
-             [busId, isAvailable, id]
+            'UPDATE seat SET busId = ?, isAvailable = ?, seatNumber = ?, price = ? WHERE id= ?',
+             [busId, isAvailable, seatNumber, price, id]
             );
         const updateSeat = await dbconnection.query(
             'SELECT * FROM seat WHERE id = ?',

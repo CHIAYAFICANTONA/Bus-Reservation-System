@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" [ngClass]="{'active': isActive}">
   <div class="section1">
     <div class="logo"  style="background-image: url(Animated%20Shape.svg);">
       <h1>Welcome to Buca Voyage</h1>
@@ -9,8 +9,8 @@
 
   <div class="bus">
     <div class="bus-type">
-      <div class="type1">Classic</div>
-      <div class="type">Vip</div>
+      <div class="type1" (click)="deactivateSection()">Classic</div>
+      <div class="type" (click)="activateSection()">Vip</div>
     </div>
 
   </div>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="time">
-            <b class="price">7000XAF</b>
+            <b class="price">5000XAF</b>
           </div>
         </div>
         <div class="continue1">
@@ -101,7 +101,7 @@
           </div>
 
           <div class="time">
-            <b class="price">7000XAF</b>
+            <b class="price">5000XAF</b>
           </div>
         </div>
         <div class="continue1">
@@ -168,7 +168,7 @@
           </div>
 
           <div class="time">
-            <b class="price">7000XAF</b>
+            <b class="price">5000XAF</b>
           </div>
         </div>
         <div class="continue1">
@@ -235,7 +235,7 @@
           </div>
 
           <div class="time">
-            <b class="price">7000XAF</b>
+            <b class="price">5000XAF</b>
           </div>
         </div>
         <div class="continue1">
@@ -302,7 +302,7 @@
           </div>
 
           <div class="time">
-            <b class="price">7000XAF</b>
+            <b class="price">5000XAF</b>
           </div>
         </div>
         <div class="continue1">

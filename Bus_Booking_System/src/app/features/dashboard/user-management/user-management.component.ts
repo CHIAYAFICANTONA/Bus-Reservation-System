@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from './model/User'
 import {FormsModule} from "@angular/forms";
+import {UsersService} from "./service/users.service";
 
 @Component({
   selector: 'app-user-management',
@@ -13,11 +14,19 @@ import {FormsModule} from "@angular/forms";
 })
 
 
-export class UserManagementComponent {
+export class UserManagementComponent implements OnInit {
   public users: User[] = [
-    {id: 1, name: 'John Doe', email: 'john@example.com', avatarUrl: 'https://via.placeholder.com/150'},
-    {id: 2, name: 'Jane Smith', email: 'jane@example.com', avatarUrl: 'https://via.placeholder.com/150'},
+    {id: 1, name: 'John Doe', email: 'john@example.com', password: 'https://via.placeholder.com/150', phoneNumber: ''},
+    {
+      id: 2,
+      name: 'Jane Smith',
+      email: 'jane@example.com',
+      password: 'https://via.placeholder.com/150',
+      phoneNumber: ""
+    },
   ];
+
+  public publicUser!: User[]
   public filteredUsers: User[] = [...this.users];
   public searchTerm: string = '';
   public sortColumn: string = '';
@@ -74,13 +83,13 @@ export class UserManagementComponent {
   }
 
   public toggleSelectAll(event: Event): void {
-    const checked = (event.target as HTMLInputElement).checked;
-    this.filteredUsers.forEach(user => user.selected = checked);
+    //  const checked = (event.target as HTMLInputElement).checked;
+    // this.filteredUsers.forEach(user => user.id = checked);
   }
 
   public deleteSelectedUsers(): void {
-    this.users = this.users.filter(user => !user.selected);
-    this.filteredUsers = this.filteredUsers.filter(user => !user.selected);
+    //this.users = this.users.filter(user => !user.selected);
+    // this.filteredUsers = this.filteredUsers.filter(user => !user.selected);
     this.updatePagination();
   }
 
@@ -109,19 +118,41 @@ export class UserManagementComponent {
   }
 
   public submitModalForm(): void {
-    const newUser: User = {
-      id: this.users.length + 1,
-      name: 'Testing ',
-      email: 'Testing@example.com',
-      avatarUrl: 'https://via.placeholder.com/150'
-    }
-    this.users = [...this.users, newUser];
-    this.showModal = false;
+    //const newUser: User = {
+    //id: this.users.length + 1,
+    //name: 'Testing ',
+    //email: 'Testing@example.com',
+    //  avatarUrl: 'https://via.placeholder.com/150'
   }
+
+  // this.users = [...this.users, newUser];
+  // this.showModal = false;
 
   public closeModal(): void {
     this.showModal = false;
   }
 
+  constructor(private userService: UsersService) {
+  }
+
+  ngOnInit(): void {
+    this.getAllUsers();
+  }
+
+
+  public getAllUsers(): void {
+    this.userService.getAllUsers()
+      .subscribe((response) => {
+        console.log('all your users', response);
+        this.publicUser = response;
+      })
+  }
+
+  public addUserInDB(user: User) {
+    this.userService.addUsers({password: '', email: '', name: '', phoneNumber: ''})
+      .subscribe((response) => {
+
+      })
+  }
 
 }
