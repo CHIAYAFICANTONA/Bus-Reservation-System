@@ -1,5 +1,6 @@
 <app-header class="mb-10"></app-header>
-<section style="background-image: url(Simple%20Shiny.svg); background-repeat: repeat" class="sign-in flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100">
+<section style="background-image: url(Simple%20Shiny.svg); background-repeat: repeat"
+         class="sign-in flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100">
   <div class="sign-up">
     <form action="">
       <img src="krome_logo.png" alt="">
@@ -10,12 +11,15 @@
 
 
       <label for="mail">Email <br>
-        <input type="email" name="mail" id="email" placeholder="Enter your email">
+        <input type="email" ngModel="user.email" name="mail" id="email" placeholder="Enter your email" required>
       </label><br>
       <label for="password">password <br>
-        <input type="password" name="password" placeholder="Enter your password" id="password"><br>
+        <input type="password" name="password" placeholder="Enter your password" id="password" required><br>
       </label>
-      <a routerLink="/trip"><input type="submit" value="Log In" class="up-btn"></a>
+      <a routerLink="/trip">
+        <button type="submit" class="up-btn">Log In
+        </button>
+      </a>
       <p>Don't have an account? <a routerLink="/signUp" class="hover:underline">Sign Up</a></p>
     </form>
     <div class="sign-up-img">
@@ -23,4 +27,6 @@
     </div>
   </div>
 </section>
-<div class="mt-50"><app-footer></app-footer></div>
+<div class="mt-50">
+  <app-footer></app-footer>
+</div>

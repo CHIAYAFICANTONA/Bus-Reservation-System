@@ -2,7 +2,7 @@ const dbconnection = require('../database');
 
 exports.getUsers = async(req, res) => {
     try {
-        const users = await dbconnection.query('SELECT u.name AS userName, r.name AS role FROM users u LEFT JOIN role r ON u.roleId = r.id');
+        const users = await dbconnection.query('SELECT u.name AS userName, u.email AS Email, u.phoneNumber AS phoneNumber, u.password AS Password, r.name AS role FROM users u LEFT JOIN role r ON u.roleId = r.id');
         res.status(200).send({
             success: true,
             data: users[0],

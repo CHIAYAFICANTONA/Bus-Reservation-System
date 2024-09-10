@@ -42,13 +42,11 @@
     </tr>
     </thead>
     <tbody>
-      @for (user of users; track user) {
+      @for (user of publicUser; track user) {
         <tr>
           <td class="py-2 px-4 border-b">
-            <input type="checkbox" [(ngModel)]="user.selected"/>
           </td>
           <td class="py-2 px-4 border-b">
-            <img [src]="user.avatarUrl" alt="{{ user.name }}" class="w-10 h-10 rounded-full"/>
           </td>
           <td class="py-2 px-4 border-b">{{ user.id }}</td>
           <td class="py-2 px-4 border-b">{{ user.name }}</td>
